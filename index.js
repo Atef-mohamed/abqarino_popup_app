@@ -1,8 +1,10 @@
 
-const container = document.createElement("a");
 
-container.textContent = "اضغط هنا";
+    const container = document.createElement("a");
 
-document.body.appendChild(container);
+    container.textContent = "اضغط هنا";
 
-console.log(window.abqarino_popup_var);
+    document.body.appendChild(container);
+
+    console.log(window.abqarino_popup_var);
+
