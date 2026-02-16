@@ -6,8 +6,8 @@ salla.onReady(() => {
             renderProduct(product);
         });
     });
-    console.log(getProduct());
     injectStyle();
+
 
 });
 
@@ -64,7 +64,7 @@ function CreateModal() {
                         <salla-add-product-button width="wide" product-id="">
                             Add to Cart
                         </salla-add-product-button>
-                        <button style="background:transparent; border:none; cursor:pointer;">
+                        <button class="cancel-btn" style="background:transparent; border:none; cursor:pointer;">
                             لا,شكرا
                         </button>
                     </div>
@@ -95,6 +95,7 @@ function getProduct() {
 
 // render product content
 function renderProduct(product) {
+
 
     const productCard = document.querySelector("#product-card");
 
@@ -127,6 +128,13 @@ function renderProduct(product) {
     const addButton = productCard.querySelector("salla-add-product-button");
     if (addButton) {
         addButton.setAttribute("product-id", product.id);
+    }
+
+    const cancelBtn = productCard.querySelector(".cancel-btn");
+    if (cancelBtn) {
+        cancelBtn.addEventListener("click", () => {
+            productCard.style.display = "none";
+        });
     }
 }
 
