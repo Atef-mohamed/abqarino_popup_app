@@ -6,7 +6,7 @@ salla.onReady(() => {
             renderProduct(product);
         });
     });
-
+    console.log(getProduct());
     injectStyle();
 
 });
@@ -114,13 +114,13 @@ function renderProduct(product) {
     // price_discount
     const discountPrice = productCard.querySelector(".discount_price");
     if (discountPrice && product.price) {
-        discountPrice.textContent = product.price.formatted;
+        discountPrice.textContent = product.price[0].formatted;
     }
     // product image
     const imageContainer = productCard.querySelector(".product-img");
     if (imageContainer && product.url) {
         imageContainer.innerHTML = `
-            <img src="${product.url}" 
+            <img src=${product.url} 
                  alt="${product.name}" 
                  style="max-width:100%;">
         `;
