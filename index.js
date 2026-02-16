@@ -171,7 +171,6 @@ function injectStyle() {
             margin-top: 4px;
         }
             
-        // product-card 
         #product-card {
             display: flex;
             gap: 20px;
