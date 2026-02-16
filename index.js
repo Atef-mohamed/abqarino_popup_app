@@ -5,18 +5,10 @@ salla.onReady(() => {
     getProduct().then(product => {
         renderProduct(product);
     });
-
-    console.log(getProduct());
     injectStyle();
 
-    // close modal
-    const closeModal = document.querySelector(".close-modal-btn");
-    const modal = document.querySelector("#subscribe-modal");
-    if (closeModal) {
-        closeModal.addEventListener("click", () => {
-            modal.style.display = "none";
-        });
-    }
+    CLoseModalButton();
+
 
 });
 
@@ -105,7 +97,6 @@ function getProduct() {
 // render product content
 function renderProduct(product) {
 
-
     const productCard = document.querySelector("#product-card");
 
     if (!productCard) return;
@@ -148,6 +139,17 @@ function renderProduct(product) {
 
 }
 
+
+function CLoseModalButton(){
+        // close modal
+    const closeModal = document.querySelector(".close-modal-btn");
+    const modal = document.querySelector("#subscribe-modal");
+    if (closeModal) {
+        closeModal.addEventListener("click", () => {
+            modal.style.display = "none";
+        });
+    }
+}
 
 function injectStyle() {
     const data = window.abqarino_popup_var;
