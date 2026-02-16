@@ -1,7 +1,7 @@
 
 salla.onReady(() => {
     CreateModal();
-    getProduct();
+    // getProduct();
     injectStyle();
 
 });
@@ -77,6 +77,7 @@ function getProduct() {
 
     });
 }
+
 function injectStyle() {
     const data = window.abqarino_popup_var;
     const bgColor = data.bg_color;
