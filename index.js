@@ -1,7 +1,9 @@
 
 salla.onReady(() => {
     CreateModal();
-    injectStyle()
+    injectStyle();
+
+
 });
 
 function formatDate(date) {
@@ -59,15 +61,26 @@ function CreateModal() {
 
     document.body.appendChild(modal);
     modal.open();
-
 }
 
+function getProduct() {
+    const productId = window.abqarino_popup_var.dropdown_list;
 
+    salla.product.getDetails(productId).then(response => {
+
+        const product = response.data || response;
+
+        const productName = document.createElement("h3");
+        productName.textContent = product.name;
+
+        modal.appendChild(productName);
+
+    });
+}
 function injectStyle() {
     const data = window.abqarino_popup_var;
     const bgColor = data.bg_color;
     const mainColor = data.bg_btn_color;
-    const textColor = data.txt_color;
 
     const style = document.createElement("style");
 
