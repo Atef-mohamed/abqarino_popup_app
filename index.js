@@ -9,18 +9,9 @@ salla.onReady(()=>{
     button.textContent = "Open Modal";
 
     button.setAttribute("data-modal-id", "subscribe-modal");
+    modal.open();
 
-    button.addEventListener("click", function (event) {
-        event.preventDefault();
 
-        const modal = document.querySelector("#subscribe-modal");
-
-        if (modal) {
-            modal.open();
-        } else {
-            console.log("Modal not found");
-        }
-    });
     document.body.appendChild(button);
 })
 
