@@ -1,10 +1,25 @@
 
+document.addEventListener("DOMContentLoaded", function () {
+    const modal = document.createElement("salla-modal");
+    modal.id = "subscribe-modal";
+    document.body.appendChild(modal);
 
-    const container = document.createElement("a");
+    const button = document.createElement("button");
+    button.textContent = "Open Modal";
 
-    container.textContent = "اضغط هنا";
+    button.setAttribute("data-modal-id", "subscribe-modal");
 
-    document.body.appendChild(container);
+    button.addEventListener("click", function (event) {
+        event.preventDefault();
 
-    console.log(window.abqarino_popup_var);
+        const modal = document.querySelector("#subscribe-modal");
 
+        if (modal) {
+            modal.open();
+        } else {
+            console.log("Modal not found");
+        }
+    });
+    document.body.appendChild(button);
+
+});
