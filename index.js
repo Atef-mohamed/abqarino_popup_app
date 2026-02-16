@@ -32,7 +32,7 @@ function CreateModal() {
         return;
     }
 
-    const modal = document.createElement("salla-modal");
+    modal = document.createElement("salla-modal");
     modal.id = "subscribe-modal";
 
     modal.innerHTML = `
