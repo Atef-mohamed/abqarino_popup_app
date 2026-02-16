@@ -1,10 +1,9 @@
 
 salla.onReady(() => {
     CreateModal();
-    salla.onReady(() => {
-        getProduct().then(product => {
-            renderProduct(product);
-        });
+
+    getProduct().then(product => {
+        renderProduct(product);
     });
     injectStyle();
 
