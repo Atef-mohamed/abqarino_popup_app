@@ -7,6 +7,14 @@ salla.onReady(() => {
     });
     injectStyle();
 
+    // close modal
+    const closeModal = document.querySelector(".close-modal-btn");
+    const modal = document.querySelector("#subscribe-modal");
+    if (closeModal) {
+        closeModal.addEventListener("click", () => {
+            modal.style.display = "none";
+        });
+    }
 
 });
 
@@ -107,12 +115,12 @@ function renderProduct(product) {
     // sale price
     const salePrice = productCard.querySelector(".sale_price");
     if (salePrice) {
-        salePrice.textContent = product.sale_price +" "+ product.currency || "";
+        salePrice.textContent = product.sale_price + " " + product.currency || "";
     }
     // price_discount
     const discountPrice = productCard.querySelector(".discount_price");
     if (discountPrice && product.regular_price) {
-        discountPrice.textContent = product.regular_price +" "+ product.currency || "";
+        discountPrice.textContent = product.regular_price + " " + product.currency || "";
     }
     // product image
     const imageContainer = productCard.querySelector(".product-img");
@@ -135,14 +143,7 @@ function renderProduct(product) {
             productCard.style.display = "none";
         });
     }
-    // close modal
-    const closeModal = productCard.querySelector(".close-modal-btn");
-    const modal = document.querySelector("#subscribe-modal");
-    if (closeModal) {
-        closeModal.addEventListener("click", () => {
-            modal.style.display = "none";
-        });
-    }
+
 }
 
 
