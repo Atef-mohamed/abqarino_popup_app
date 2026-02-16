@@ -114,13 +114,13 @@ function renderProduct(product) {
     // price_discount
     const discountPrice = productCard.querySelector(".discount_price");
     if (discountPrice && product.price) {
-        discountPrice.textContent = product.price[0].formatted;
+        discountPrice.textContent = product.regular_price.formatted;
     }
     // product image
     const imageContainer = productCard.querySelector(".product-img");
-    if (imageContainer && product.url) {
+    if (imageContainer && product.image.url) {
         imageContainer.innerHTML = `
-            <img src=${product.url} 
+            <img src=${product.image.url} 
                  alt="${product.name}" 
                  style="max-width:100%;">
         `;
