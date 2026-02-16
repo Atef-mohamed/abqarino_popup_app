@@ -74,9 +74,7 @@ function CreateModal() {
                 ${data.txt_btn_ok}
             </button>
 
-            <br/><br/>
-
-            <button style="background:transparent; border:none; cursor:pointer;">
+            <button style="background:transparent; border:none; text-decoration: underline; cursor:pointer;">
                 ${data.txt_btn_cancel}
             </button>
 
