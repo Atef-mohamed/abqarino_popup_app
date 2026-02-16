@@ -65,7 +65,7 @@ function CreateModal() {
                             Add to Cart
                         </salla-add-product-button>
                         <button style="background:transparent; border:none; cursor:pointer;">
-                            ${data.txt_btn_cancel}
+                            لا,شكرا
                         </button>
                     </div>
                 </div>
@@ -166,10 +166,91 @@ function injectStyle() {
             font-weight: bold;
             min-width: 40px;
         }
-
         .s-count-down-item-label {
             font-size: 12px;
             margin-top: 4px;
+        }
+            
+        // product-card 
+        #product-card {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            background: #000;
+            border-radius: 12px;
+            padding: 20px;
+            color: #fff;
+            max-width: 500px; 
+        }
+
+        #product-card .product-img {
+            flex: 0 0 120px; 
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0,0,0,0.7);
+        }
+
+        #product-card .product-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        #product-card .product-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        #product-card .product-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        #product-card .prices {
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        #product-card .sale_price {
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+
+        #product-card .discount_price {
+            text-decoration: line-through;
+            opacity: 0.5;
+            font-size: 1rem;
+        }
+
+        #product-card .product-buttons {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        #product-card salla-add-product-button {
+            background: white;
+            color: black;
+            border-radius: 50px;
+            padding: 10px 25px;
+            font-weight: bold;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        #product-card button {
+            background: transparent;
+            border: none;
+            color: white;
+            cursor: pointer;
+            text-decoration: underline;
+            font-size: 0.9rem;
         }
 
     `;
