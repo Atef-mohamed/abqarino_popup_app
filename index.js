@@ -67,7 +67,7 @@ function CreateModal() {
 function injectStyle() {
     const data = window.abqarino_popup_var;
     const mainColor = data.bg_btn_color;
-    const textColor = data.txt_color;
+    const textColor = data.txt_btn_ok;
 
     const style = document.createElement("style");
 
