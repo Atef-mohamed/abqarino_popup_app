@@ -8,7 +8,7 @@ salla.onReady(() => {
     injectStyle();
 
     CLoseModalButton();
-
+    handleModalPrimaryBtn()
 
 });
 
@@ -71,7 +71,7 @@ function CreateModal() {
                     </div>
                 </div>
             </div>
-            <button style="background:${data.bg_btn_color}; color:#fff; padding:10px 20px; border:none; border-radius:8px; cursor:pointer;">
+            <button class="ok-modal-btn" style="background:${data.bg_btn_color}; color:#fff; padding:10px 20px; border:none; border-radius:8px; cursor:pointer;">
                 ${data.txt_btn_ok}
             </button>
 
@@ -87,6 +87,7 @@ function CreateModal() {
 }
 
 function getProduct() {
+    
     const productId = window.abqarino_popup_var.dropdown_list;
 
     return salla.product.getDetails(productId).then(response => {
@@ -141,7 +142,7 @@ function renderProduct(product) {
 
 
 function CLoseModalButton(){
-        // close modal
+    // close modal
     const closeModal = document.querySelector(".close-modal-btn");
     const modal = document.querySelector("#subscribe-modal");
     if (closeModal) {
@@ -151,6 +152,16 @@ function CLoseModalButton(){
     }
 }
 
+function handleModalPrimaryBtn() {
+     const data = window.abqarino_popup_var;
+    const btn = document.querySelector('.ok-modal-btn');
+    
+    btn.addEventListener('click', () => {
+        window.location.href = data.btn_link;
+    });
+
+
+}
 function injectStyle() {
     const data = window.abqarino_popup_var;
     const bgColor = data.bg_color;
