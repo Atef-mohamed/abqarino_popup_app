@@ -71,11 +71,11 @@ function getProduct() {
     salla.product.getDetails(productId).then(response => {
 
         const product = response.data || response;
+        console.log("pro", product);
 
-        
         const productName = document.createElement("h3");
         productName.textContent = product.name;
-        
+
         const productCard = document.querySelector("#product-card");
         productCard.appendChild(productName);
     });
