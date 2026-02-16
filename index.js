@@ -50,7 +50,7 @@ function CreateModal() {
             </p>
             
             <salla-count-down date="${formatDate(data.discount_time)}" end-of-day="true" boxed="true" labeled="true"></salla-count-down>
-            <div id="product-card">
+            <div id="product-card" class="product-card">
                 <div class="product-img">
                 
                 </div>
@@ -171,7 +171,7 @@ function injectStyle() {
             margin-top: 4px;
         }
             
-        #product-card {
+        .product-card {
             display: flex;
             gap: 20px;
             align-items: center;
@@ -181,20 +181,20 @@ function injectStyle() {
             color: #fff;
         }
 
-        #product-card .product-img {
+        .product-card .product-img {
             flex: 0 0 120px; 
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 0 10px rgba(0,0,0,0.7);
         }
 
-        #product-card .product-img img {
+        .product-card .product-img img {
             width: 100%;
             height: auto;
             display: block;
         }
 
-        #product-card .product-content {
+        .product-card .product-content {
             flex: 1;
             display: flex;
             flex-direction: column;
@@ -202,37 +202,37 @@ function injectStyle() {
             gap: 12px;
         }
 
-        #product-card .product-title {
+        .product-card .product-title {
             font-size: 1.25rem;
             font-weight: 700;
             margin: 0;
         }
 
-        #product-card .prices {
+        .product-card .prices {
             font-size: 1rem;
             display: flex;
             align-items: center;
             gap: 10px;
         }
 
-        #product-card .sale_price {
+        .product-card .sale_price {
             font-weight: 700;
             font-size: 1.3rem;
         }
 
-        #product-card .discount_price {
+        .product-card .discount_price {
             text-decoration: line-through;
             opacity: 0.5;
             font-size: 1rem;
         }
 
-        #product-card .product-buttons {
+        .product-card .product-buttons {
             display: flex;
             align-items: center;
             gap: 15px;
         }
 
-        #product-card salla-add-product-button {
+        .product-card salla-add-product-button {
             background:${mainColor};
             color:#ffffff;
             border-radius: 50px;
@@ -242,7 +242,7 @@ function injectStyle() {
             user-select: none;
         }
 
-        #product-card button {
+        .product-card button {
             background: transparent;
             border: none;
             color: white;
