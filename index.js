@@ -243,7 +243,7 @@ function injectStyle() {
             user-select: none;
             text-decoration: none;
         }
-            .product-card salla-add-product-button:hover{
+            .product-card button:hover{
                 background:#ffffff;
             }
 
