@@ -5,6 +5,8 @@ salla.onReady(() => {
     getProduct().then(product => {
         renderProduct(product);
     });
+
+    console.log(getProduct());
     injectStyle();
 
     // close modal
