@@ -21,7 +21,6 @@ function formatDate(date) {
     return formatted;
 }
 
-
 function CreateModal() {
 
     const data = window.abqarino_popup_var;
@@ -66,12 +65,16 @@ function CreateModal() {
 
 function injectStyle() {
     const data = window.abqarino_popup_var;
+    const bgColor = data.bg_color;
     const mainColor = data.bg_btn_color;
     const textColor = data.txt_btn_ok;
 
     const style = document.createElement("style");
 
     style.innerHTML = `
+    #subscribe-modal {
+        background:${bgColor};
+    }
         .s-count-down-list {
             display: flex;
             align-items: center;
