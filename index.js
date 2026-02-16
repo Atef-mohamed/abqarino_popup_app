@@ -1,7 +1,7 @@
 
 salla.onReady(() => {
     CreateModal();
-    // getProduct();
+    getProduct();
     injectStyle();
 
 });
@@ -45,7 +45,9 @@ function CreateModal() {
             </p>
             
             <salla-count-down date="${formatDate(data.discount_time)}" end-of-day="true" boxed="true" labeled="true"></salla-count-down>
-
+            <div id="product-card">
+            
+            </div>
             <button style="background:${data.bg_btn_color}; color:#fff; padding:10px 20px; border:none; border-radius:8px; cursor:pointer;">
                 ${data.txt_btn_ok}
             </button>
@@ -70,12 +72,12 @@ function getProduct() {
 
         const product = response.data || response;
 
-        const productName = document.createElement("h3");
-        productName.textContent = product.name;
-
-        modal.appendChild(productName);
-
+        
     });
+    const productName = document.createElement("h3");
+    productName.textContent = product.name;
+
+    modal.appendChild(productName);
 }
 
 function injectStyle() {
