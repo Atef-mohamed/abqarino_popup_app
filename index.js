@@ -1,6 +1,7 @@
 
 salla.onReady(() => {
     CreateModal();
+    injectStyle()
 });
 
 function formatDate(date) {
@@ -62,3 +63,50 @@ function CreateModal() {
 
 }
 
+
+function injectStyle() {
+
+    const style = document.createElement("style");
+
+    style.innerHTML = `
+        .s-count-down-list {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            padding: 0;
+            gap: 8px;
+        }
+
+        .s-count-down-item {
+            text-align: center;
+            position: relative;
+        }
+
+        .s-count-down-item-value {
+            background: #000;
+            color: #fff;
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-size: 20px;
+            font-weight: bold;
+            min-width: 40px;
+        }
+
+        .s-count-down-item-label {
+            font-size: 12px;
+            margin-top: 4px;
+        }
+
+        .s-count-down-item:not(:last-child)::after {
+            content: ":";
+            position: absolute;
+            right: -12px;
+            top: 8px;
+            font-size: 22px;
+            font-weight: bold;
+            color: #000;
+        }
+    `;
+
+    document.head.appendChild(style);
+}
