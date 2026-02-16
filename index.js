@@ -73,11 +73,12 @@ function getProduct() {
         const product = response.data || response;
 
         
+        const productName = document.createElement("h3");
+        productName.textContent = product.name;
+        
+        const productCard = document.querySelector("#product-card");
+        productCard.appendChild(productName);
     });
-    const productName = document.createElement("h3");
-    productName.textContent = product.name;
-
-    modal.appendChild(productName);
 }
 
 function injectStyle() {
