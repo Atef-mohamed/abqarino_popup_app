@@ -176,7 +176,7 @@ function injectStyle() {
             gap: 20px;
             align-items: center;
             margin-bottom: 22px;
-            background: #b5e4ff;
+            background: #38352c65;
             border-radius: 12px;
             padding: 20px;
             color: #fff;
@@ -237,7 +237,6 @@ function injectStyle() {
             background:${mainColor};
             color:#ffffff;
             border-radius: 50px;
-            padding: 10px 25px;
             font-weight: bold;
             cursor: pointer;
             user-select: none;
