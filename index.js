@@ -109,12 +109,12 @@ function renderProduct(product) {
     // sale price
     const salePrice = productCard.querySelector(".sale_price");
     if (salePrice) {
-        salePrice.textContent = product.sale_price + product.currency || "";
+        salePrice.textContent = product.sale_price +" "+ product.currency || "";
     }
     // price_discount
     const discountPrice = productCard.querySelector(".discount_price");
     if (discountPrice && product.regular_price) {
-        discountPrice.textContent = product.regular_price + product.currency || "";
+        discountPrice.textContent = product.regular_price +" "+ product.currency || "";
     }
     // product image
     const imageContainer = productCard.querySelector(".product-img");
@@ -175,6 +175,7 @@ function injectStyle() {
             display: flex;
             gap: 20px;
             align-items: center;
+            margin-bottom: 22px;
             background: #000;
             border-radius: 12px;
             padding: 20px;
@@ -240,7 +241,11 @@ function injectStyle() {
             font-weight: bold;
             cursor: pointer;
             user-select: none;
+            text-decoration: none;
         }
+            .product-card salla-add-product-button:hover{
+                background:#ffffff;
+            }
 
         .product-card button {
             background: transparent;
