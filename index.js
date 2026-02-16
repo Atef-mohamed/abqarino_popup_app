@@ -26,7 +26,7 @@ function CreateModal() {
                 ${data.brand_description}
             </p>
             
-            <salla-count-down date="${this.formatDate(data.discount_time)}" end-of-day="true" boxed="true" labeled="true" />
+            <salla-count-down date="${formatDate(data.discount_time)}" end-of-day="true" boxed="true" labeled="true" />
 
             <button style="background:${data.bg_btn_color}; color:#fff; padding:10px 20px; border:none; border-radius:8px; cursor:pointer;">
                 ${data.txt_btn_ok}
