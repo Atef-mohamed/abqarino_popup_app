@@ -124,21 +124,23 @@ function renderProduct(product) {
                  style="max-width:100%;">
         `;
     }
-
+    // add product to cart
     const addButton = productCard.querySelector("salla-add-product-button");
     if (addButton) {
         addButton.setAttribute("product-id", product.id);
     }
-
+    // cancle product
     const cancelBtn = productCard.querySelector(".cancel-btn");
     if (cancelBtn) {
         cancelBtn.addEventListener("click", () => {
             productCard.style.display = "none";
         });
     }
+    // close modal
     const closeModal = productCard.querySelector(".close-modal-btn");
+    const modal = productCard.querySelector("#subscribe-modal");
     if (closeModal) {
-        cancelBtn.addEventListener("click", () => {
+        closeModal.addEventListener("click", () => {
             modal.style.display = "none";
         });
     }
