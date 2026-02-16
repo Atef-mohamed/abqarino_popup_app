@@ -65,6 +65,9 @@ function CreateModal() {
 
 
 function injectStyle() {
+    const data = window.abqarino_popup_var;
+    const mainColor = data.bg_btn_color;
+    const textColor = data.txt_color;
 
     const style = document.createElement("style");
 
@@ -83,8 +86,8 @@ function injectStyle() {
         }
 
         .s-count-down-item-value {
-            background: #000;
-            color: #fff;
+            background: ${mainColor};
+            color: ${textColor};
             padding: 10px 14px;
             border-radius: 8px;
             font-size: 20px;
@@ -97,15 +100,6 @@ function injectStyle() {
             margin-top: 4px;
         }
 
-        .s-count-down-item:not(:last-child)::after {
-            content: ":";
-            position: absolute;
-            right: -12px;
-            top: 8px;
-            font-size: 22px;
-            font-weight: bold;
-            color: #000;
-        }
     `;
 
     document.head.appendChild(style);
