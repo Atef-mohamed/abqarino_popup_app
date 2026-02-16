@@ -12,6 +12,7 @@ salla.onReady(() => {
 
 });
 
+// foramt date
 function formatDate(date) {
     let d;
     if (typeof date === "number") {
@@ -86,6 +87,7 @@ function CreateModal() {
     modal.open();
 }
 
+// get product
 function getProduct() {
     
     const productId = window.abqarino_popup_var.dropdown_list;
@@ -140,7 +142,7 @@ function renderProduct(product) {
 
 }
 
-
+// close btn button
 function CLoseModalButton(){
     // close modal
     const closeModal = document.querySelector(".close-modal-btn");
@@ -152,6 +154,7 @@ function CLoseModalButton(){
     }
 }
 
+// save btn button
 function handleModalPrimaryBtn() {
      const data = window.abqarino_popup_var;
     const btn = document.querySelector('.ok-modal-btn');
@@ -162,6 +165,8 @@ function handleModalPrimaryBtn() {
 
 
 }
+
+// css style
 function injectStyle() {
     const data = window.abqarino_popup_var;
     const bgColor = data.bg_color;
