@@ -109,12 +109,12 @@ function renderProduct(product) {
     // sale price
     const salePrice = productCard.querySelector(".sale_price");
     if (salePrice) {
-        salePrice.textContent = product.sale_price || "";
+        salePrice.textContent = product.sale_price + product.currency || "";
     }
     // price_discount
     const discountPrice = productCard.querySelector(".discount_price");
     if (discountPrice && product.regular_price) {
-        discountPrice.textContent = product.regular_price || "";
+        discountPrice.textContent = product.regular_price + product.currency || "";
     }
     // product image
     const imageContainer = productCard.querySelector(".product-img");
@@ -182,7 +182,7 @@ function injectStyle() {
         }
 
         .product-card .product-img {
-            flex: 0 0 120px; 
+            flex: 0 0 100px; 
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 0 10px rgba(0,0,0,0.7);
