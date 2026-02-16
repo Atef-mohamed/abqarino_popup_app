@@ -73,7 +73,7 @@ function injectStyle() {
 
     style.innerHTML = `
         #subscribe-modal {
-            background:${bgColor};
+            background-color:${bgColor};
         }
         .s-count-down-list {
             display: flex;
@@ -90,7 +90,7 @@ function injectStyle() {
 
         .s-count-down-item-value {
             background: ${mainColor};
-            color: ${textColor};
+            color: #ffffff;
             padding: 10px 14px;
             border-radius: 8px;
             font-size: 20px;
