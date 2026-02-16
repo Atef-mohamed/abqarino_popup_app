@@ -1,5 +1,6 @@
 
-document.addEventListener("DOMContentLoaded", function () {
+salla.onReady(()=>{
+
     const modal = document.createElement("salla-modal");
     modal.id = "subscribe-modal";
     document.body.appendChild(modal);
@@ -21,5 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
     document.body.appendChild(button);
+})
 
-});
+
+
