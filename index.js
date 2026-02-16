@@ -113,8 +113,8 @@ function renderProduct(product) {
     }
     // price_discount
     const discountPrice = productCard.querySelector(".discount_price");
-    if (discountPrice && product.price) {
-        discountPrice.textContent = product.regular_price.formatted;
+    if (discountPrice && product.regular_price) {
+        discountPrice.textContent = product.regular_price;
     }
     // product image
     const imageContainer = productCard.querySelector(".product-img");
