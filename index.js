@@ -176,7 +176,7 @@ function injectStyle() {
             gap: 20px;
             align-items: center;
             margin-bottom: 22px;
-            background: #000;
+            background: #b5e4ff;
             border-radius: 12px;
             padding: 20px;
             color: #fff;
@@ -244,7 +244,7 @@ function injectStyle() {
             text-decoration: none;
         }
             .product-card button:hover{
-                background:#ffffff;
+                background:transparent;
             }
 
         .product-card button {
