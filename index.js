@@ -18,7 +18,7 @@ function CreateModal() {
     modal.id = "subscribe-modal";
 
     modal.innerHTML = `
-        <div style="padding:20px; text-align:center; background:${data.bg_color}; border-radius:${data.raduis_border}px;">
+        <div style="padding:20px; text-align:center; background:${data.bg_color};display:flex;  flex-direction:column; justify-content:center; align-items:center; border-radius:${data.raduis_border}px;">
             
             <img src="${data.brand_logo}" style="max-width:120px; margin-bottom:15px;" />
 
