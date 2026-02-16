@@ -97,9 +97,9 @@ function getProduct() {
 function renderProduct(product) {
 
 
-    const document = document.querySelector("#product-card");
+    const productCard = document.querySelector("#product-card");
 
-    if (!document) return;
+    if (!productCard) return;
     // title
     const title = productCard.querySelector(".product-title");
     if (title) {
@@ -136,7 +136,14 @@ function renderProduct(product) {
             productCard.style.display = "none";
         });
     }
-
+    // close modal
+    const closeModal = productCard.querySelector(".close-modal-btn");
+    const modal = document.querySelector("#subscribe-modal");
+    if (closeModal) {
+        closeModal.addEventListener("click", () => {
+            modal.style.display = "none";
+        });
+    }
 }
 
 
