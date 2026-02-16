@@ -8,14 +8,7 @@ salla.onReady(() => {
     });
     injectStyle();
 
-        // close modal
-    const closeModal = document.querySelector(".close-modal-btn");
-    const modal = document.querySelector("#subscribe-modal");
-    if (closeModal) {
-        closeModal.addEventListener("click", () => {
-            modal.style.display = "none";
-        });
-    }
+
 });
 
 function formatDate(date) {
