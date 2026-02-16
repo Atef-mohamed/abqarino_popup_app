@@ -1,8 +1,24 @@
 
 salla.onReady(() => {
     CreateModal();
-})
+});
 
+function formatDate(date) {
+    let d;
+    if (typeof date === "number") {
+        if (date < 10000000000) {
+            d = new Date(date * 1000);
+        } else {
+            d = new Date(date);
+        }
+    } else if (typeof date === "string") {
+        d = new Date(date);
+    } else {
+        d = new Date(date);
+    }
+    const formatted = `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`;
+    return formatted;
+}
 
 
 function CreateModal() {
