@@ -180,7 +180,6 @@ function injectStyle() {
             border-radius: 12px;
             padding: 20px;
             color: #fff;
-            max-width: 500px; 
         }
 
         #product-card .product-img {
@@ -235,8 +234,8 @@ function injectStyle() {
         }
 
         #product-card salla-add-product-button {
-            background: white;
-            color: black;
+            background:${mainColor};
+            color:#ffffff;
             border-radius: 50px;
             padding: 10px 25px;
             font-weight: bold;
