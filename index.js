@@ -74,7 +74,7 @@ function CreateModal() {
                 ${data.txt_btn_ok}
             </button>
 
-            <button style="background:transparent; border:none; text-decoration: underline; cursor:pointer;">
+            <button class="close-modal-btn" style="background:transparent; border:none; text-decoration: underline; cursor:pointer;">
                 ${data.txt_btn_cancel}
             </button>
 
@@ -134,6 +134,12 @@ function renderProduct(product) {
     if (cancelBtn) {
         cancelBtn.addEventListener("click", () => {
             productCard.style.display = "none";
+        });
+    }
+    const closeModal = productCard.querySelector(".close-modal-btn");
+    if (closeModal) {
+        cancelBtn.addEventListener("click", () => {
+            modal.style.display = "none";
         });
     }
 }
