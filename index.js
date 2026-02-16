@@ -1,7 +1,12 @@
 
 salla.onReady(() => {
     CreateModal();
-    getProduct();
+    salla.onReady(() => {
+        getProduct().then(product => {
+            renderProduct(product);
+        });
+    });
+
     injectStyle();
 
 });
@@ -46,7 +51,24 @@ function CreateModal() {
             
             <salla-count-down date="${formatDate(data.discount_time)}" end-of-day="true" boxed="true" labeled="true"></salla-count-down>
             <div id="product-card">
-            
+                <div class="product-img">
+                
+                </div>
+                <div class="product-content">
+                    <h3 class="product-title"></h3>
+                    <p class="prices">
+                        <span class="sale_price"></span>
+                        <span class="discount_price"></span>
+                    </p>
+                    <div class="product-buttons">
+                        <salla-add-product-button width="wide" product-id="">
+                            Add to Cart
+                        </salla-add-product-button>
+                        <button style="background:transparent; border:none; cursor:pointer;">
+                            ${data.txt_btn_cancel}
+                        </button>
+                    </div>
+                </div>
             </div>
             <button style="background:${data.bg_btn_color}; color:#fff; padding:10px 20px; border:none; border-radius:8px; cursor:pointer;">
                 ${data.txt_btn_ok}
@@ -68,18 +90,48 @@ function CreateModal() {
 function getProduct() {
     const productId = window.abqarino_popup_var.dropdown_list;
 
-    salla.product.getDetails(productId).then(response => {
-
-        const product = response.data || response;
-        console.log("pro", product);
-
-        const productName = document.createElement("h3");
-        productName.textContent = product.name;
-
-        const productCard = document.querySelector("#product-card");
-        productCard.appendChild(productName);
+    return salla.product.getDetails(productId).then(response => {
+        return response.data || response;
     });
 }
+
+// render product content
+function renderProduct(product) {
+
+    const productCard = document.querySelector("#product-card");
+
+    if (!productCard) return;
+    // title
+    const title = productCard.querySelector(".product-title");
+    if (title) {
+        title.textContent = product.name;
+    }
+    // sale price
+    const salePrice = productCard.querySelector(".sale_price");
+    if (salePrice) {
+        salePrice.textContent = product.sale_price || "";
+    }
+    // price_discount
+    const discountPrice = productCard.querySelector(".discount_price");
+    if (discountPrice && product.price) {
+        discountPrice.textContent = product.price.formatted;
+    }
+    // product image
+    const imageContainer = productCard.querySelector(".product-img");
+    if (imageContainer && product.url) {
+        imageContainer.innerHTML = `
+            <img src="${product.url}" 
+                 alt="${product.name}" 
+                 style="max-width:100%;">
+        `;
+    }
+
+    const addButton = productCard.querySelector("salla-add-product-button");
+    if (addButton) {
+        addButton.setAttribute("product-id", product.id);
+    }
+}
+
 
 function injectStyle() {
     const data = window.abqarino_popup_var;
