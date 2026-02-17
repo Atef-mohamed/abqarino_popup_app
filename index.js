@@ -43,11 +43,11 @@ function CreateModal() {
     modal.id = "subscribe-modal";
 
     modal.innerHTML = `
-        <div style="padding:20px; text-align:center; background:${data.bg_color};display:flex;  flex-direction:column; justify-content:center; align-items:center; border-radius:${data.raduis_border}px;">
-            
-            <img src="${data.brand_logo}" style="max-width:120px; margin-bottom:15px;" />
-
-            <p style="color:${data.txt_color}; font-size:18px;">
+        <div style="padding:20px; text-align:center; background:${data.bg_color};display:flex; justify-content:center; align-items:center; border-radius:${data.raduis_border}px;">
+        <img src="${data.brand_logo}" style="max-width:120px; margin-bottom:15px;" />
+        
+        <div class="content-side">
+             <p style="color:${data.txt_color}; font-size:18px;">
                 ${data.brand_description}
             </p>
             
@@ -90,6 +90,8 @@ function CreateModal() {
             <button class="close-modal-btn" style="background:transparent; border:none; text-decoration: underline; cursor:pointer;">
                 ${data.txt_btn_cancel}
             </button>
+        </div>
+           
 
         </div>
     `;
