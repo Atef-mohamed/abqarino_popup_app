@@ -35,7 +35,6 @@ function CreateModal() {
     const data = window.abqarino_popup_var;
 
     if (!data) {
-        console.log("Popup data not found");
         return;
     }
 
