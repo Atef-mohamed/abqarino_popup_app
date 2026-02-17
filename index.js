@@ -95,27 +95,12 @@ function CreateModal() {
     modal.open();
 }
 
+// get product
 function getProduct() {
     const raw = window.abqarino_popup_var.dropdown_list;
-
-    // ✅ handle كل الحالات
-    let productIds;
-
-    if (Array.isArray(raw)) {
-        productIds = raw;
-    } else if (typeof raw === "number") {
-        productIds = [raw];
-    } else if (typeof raw === "string") {
-        const trimmed = raw.trim();
-        if (trimmed.startsWith("[")) {
-            productIds = JSON.parse(trimmed);
-        } else {
-            productIds = [Number(trimmed)];
-        }
-    } else {
-        return Promise.resolve([]);
-    }
-
+    
+    const productIds = Array.isArray(raw) ? raw : JSON.parse(raw);
+    
     console.log("ids", productIds);
 
     const requests = productIds.map(id =>
