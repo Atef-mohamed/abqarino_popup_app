@@ -2,9 +2,10 @@
 salla.onReady(() => {
     CreateModal();
 
-    getProduct().then(product => {
-        renderProduct(product);
+    getProduct().then(products => {
+        renderProduct(products);
     });
+    console.log(getProduct());
     injectStyle();
 
     CLoseModalButton();
@@ -99,7 +100,6 @@ function CreateModal() {
 function getProduct() {
     const productIds = window.abqarino_popup_var.dropdown_list;
 
-    // ✅ loop على كل ID في الـ array
     const requests = productIds.map(id =>
         salla.product.getDetails(id, ["brand", "category"]).then(response => {
             return response.data || response;
