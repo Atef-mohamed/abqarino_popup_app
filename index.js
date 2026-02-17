@@ -86,28 +86,7 @@ function CreateModal() {
 
             </div>
         </div>
-           ${data.dropdown_list ? `
-                <div id="product-card" class="product-card">
-                    <div class="product-img">
-                    
-                    </div>
-                    <div class="product-content">
-                        <h3 class="product-title"></h3>
-                        <p class="prices">
-                            <span class="sale_price"></span>
-                            <span class="discount_price"></span>
-                        </p>
-                        <div class="product-buttons">
-                            <salla-add-product-button width="wide" product-id="">
-                                Add to Cart
-                            </salla-add-product-button>
-                            <button class="cancel-btn" style="background:transparent; border:none; cursor:pointer;">
-                                لا,شكرا
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                `: ``}
+           
         </div>
     `;
 
