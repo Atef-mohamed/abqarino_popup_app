@@ -341,6 +341,7 @@ function injectStyle() {
         }
 
         .copy-btn {
+            display:contents;
             cursor: pointer;
             border: none;
             background: transparent;
