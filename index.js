@@ -344,6 +344,7 @@ function injectStyle() {
         .copy-btn {
             display: flex;             
             align-items: center;
+            width: 25px;
             cursor: pointer;
             border: none;
             background: transparent;
