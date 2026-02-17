@@ -44,9 +44,9 @@ function CreateModal() {
 
     modal.innerHTML = `
         <div style="padding:20px; text-align:center; background:${data.bg_color};display:flex; flex-direction:column; justify-content:center; align-items:center; border-radius:${data.raduis_border}px;">
-        <div class="content-top-side"  style="display:flex; text-align:center; justify-content:center; align-items:center;">
+        <div class="content-top-side"  style="width:80%;display:flex; text-align:center; justify-content:space-between; align-items:center; flex-wrap: wrap;">
         
-            <img src="${data.brand_logo}" style="max-width:120px; margin-bottom:15px;" />
+            <img src="${data.brand_logo}" style="max-width:250px; margin-bottom:15px;" />
             
             <div class="content">
                 <p style="color:${data.txt_color}; font-size:18px;">
@@ -343,6 +343,7 @@ function injectStyle() {
             justify-content: space-between;
             gap: 8px;
             padding: 8px 12px;
+            margin:10px 0;
             border: 1px dashed #3cb646;
             border-radius: 6px;
             background-color: #e3f2fd;
