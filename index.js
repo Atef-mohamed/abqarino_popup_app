@@ -43,66 +43,115 @@ function CreateModal() {
     modal.id = "subscribe-modal";
 
     modal.innerHTML = `
-    <div style="padding:20px; text-align:center; background:${data.bg_color || '#fff'};
-                display:flex; flex-direction:column; justify-content:center; align-items:center;
-                border-radius:${data.raduis_border || 8}px;">
+        <div style="padding:20px; text-align:center; background:${data.bg_color || '#fff'};
+                    display:flex; flex-direction:column; justify-content:center; align-items:center;
+                    border-radius:${data.raduis_border || 8}px;">
 
-        <div class="content-top-side" style="width:80%; display:flex; justify-content:space-between;align-items:center; flex-wrap:wrap; gap:20px;">
-            ${data.brand_logo ? `
-                <img src="${data.brand_logo}"
-                    style="max-width:250px; border-radius:4px;" />
-            ` : ``}
+            <div class="content-top-side"
+                style="width:80%; display:flex; justify-content:space-between;
+                align-items:center; flex-wrap:wrap; gap:20px;">
 
-            <div class="content">
-                ${data.brand_description ? `
-                    <p style="color:${data.txt_color || '#000'}; font-size:18px;">
-                        ${data.brand_description}
-                    </p>
+                ${data.brand_logo ? `
+                    <img src="${data.brand_logo}"
+                        style="max-width:250px; border-radius:4px;" />
                 ` : ``}
 
-                ${data.discount_time ? `
-                    <salla-count-down
-                        date="${formatDate(data.discount_time)}"
-                        end-of-day="true"
-                        boxed="true"
-                        labeled="true">
-                    </salla-count-down>
-                ` : ``}
+                <div class="content">
 
-                ${data.txt_btn_ok ? `
-                    <button class="ok-modal-btn"
-                            style="background:${data.bg_btn_color || '#000'};
-                            color:#fff; padding:10px 20px;
-                            border:none; border-radius:8px; cursor:pointer;">
-                        ${data.txt_btn_ok}
-                    </button>
-                ` : ``}
+                    ${data.brand_description ? `
+                        <p style="color:${data.txt_color || '#000'}; font-size:18px;">
+                            ${data.brand_description}
+                        </p>
+                    ` : ``}
 
-                ${data.procode_txt ? `
-                    <div class="copy-box">
-                        <p>نسخ كود الخصم</p>
-                        <div id="copyText">${data.procode_txt}</div>
-                        <button id="copyBtn" class="copy-btn">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 0 1-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 0 1 1.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 0 0-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 0 1-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 0 0-3.375-3.375h-1.5a1.125 1.125 0 0 1-1.125-1.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H9.75" />
-                            </svg>
+                    ${data.discount_time ? `
+                        <salla-count-down
+                            date="${formatDate(data.discount_time)}"
+                            end-of-day="true"
+                            boxed="true"
+                            labeled="true">
+                        </salla-count-down>
+                    ` : ``}
+
+                    ${data.txt_btn_ok ? `
+                        <button class="ok-modal-btn"
+                                style="background:${data.bg_btn_color || '#000'};
+                                color:#fff; padding:10px 20px;
+                                border:none; border-radius:8px; cursor:pointer;">
+                            ${data.txt_btn_ok}
                         </button>
-                    </div>
-                ` : ``}
+                    ` : ``}
 
-                ${data.txt_btn_cancel ? `
-                    <button class="close-modal-btn"
-                            style="background:transparent; border:none;
-                            text-decoration:underline; cursor:pointer;">
-                        ${data.txt_btn_cancel}
-                    </button>
-                ` : ``}
+                    ${data.procode_txt ? `
+                        <div class="copy-box">
+                            <p>نسخ كود الخصم</p>
+                            <div id="copyText">${data.procode_txt}</div>
+                            <button id="copyBtn" class="copy-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 0 1-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 0 1 1.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 0 0-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 0 1-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 0 0-3.375-3.375h-1.5a1.125 1.125 0 0 1-1.125-1.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H9.75" />
+                    </svg>
+                            </button>
+                        </div>
+                    ` : ``}
 
+                    ${data.txt_btn_cancel ? `
+                        <button class="close-modal-btn"
+                                style="background:transparent; border:none;
+                                text-decoration:underline; cursor:pointer;">
+                            ${data.txt_btn_cancel}
+                        </button>
+                    ` : ``}
+
+                </div>
             </div>
-        </div>
 
-    </div>
-`;
+            ${
+                data.product_id || data.product_title || data.sale_price
+                ? `
+                <div id="product-card" class="product-card">
+                    <div class="product-img">
+                        ${data.product_image ? `<img src="${data.product_image}" style="max-width:100%;" />` : ``}
+                    </div>
+
+                    <div class="product-content">
+                        ${data.product_title ? `<h3 class="product-title">${data.product_title}</h3>` : ``}
+
+                        ${
+                            data.sale_price || data.discount_price
+                            ? `
+                            <p class="prices">
+                                ${data.sale_price ? `<span class="sale_price">${data.sale_price}</span>` : ``}
+                                ${data.discount_price ? `<span class="discount_price">${data.discount_price}</span>` : ``}
+                            </p>
+                            `
+                            : ``
+                        }
+
+                        <div class="product-buttons">
+                            ${
+                                data.product_id
+                                ? `
+                                <salla-add-product-button width="wide" product-id="${data.product_id}">
+                                    Add to Cart
+                                </salla-add-product-button>
+                                `
+                                : ``
+                            }
+
+                            <button class="cancel-btn"
+                                    style="background:transparent; border:none; cursor:pointer;">
+                                لا,شكرا
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                `
+                : ``
+            }
+
+        </div>
+    `;
+
 
 
     document.body.appendChild(modal);
