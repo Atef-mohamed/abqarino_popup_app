@@ -76,6 +76,16 @@ function CreateModal() {
                 ${data.txt_btn_ok}
             </button>
 
+            <div class="copy-box">
+                <span id="copyText">${data.procode_txt}</span>
+                <button id="copyBtn" class="copy-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 0 1-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 0 1 1.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 0 0-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 0 1-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 0 0-3.375-3.375h-1.5a1.125 1.125 0 0 1-1.125-1.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H9.75" />
+                    </svg>
+                </button>
+            </div>
+
+
             <button class="close-modal-btn" style="background:transparent; border:none; text-decoration: underline; cursor:pointer;">
                 ${data.txt_btn_cancel}
             </button>
@@ -89,7 +99,7 @@ function CreateModal() {
 
 // get product
 function getProduct() {
-    
+
     const productId = window.abqarino_popup_var.dropdown_list;
 
     return salla.product.getDetails(productId).then(response => {
@@ -143,7 +153,7 @@ function renderProduct(product) {
 }
 
 // close btn button
-function CLoseModalButton(){
+function CLoseModalButton() {
     // close modal
     const closeModal = document.querySelector(".close-modal-btn");
     const modal = document.querySelector("#subscribe-modal");
@@ -156,9 +166,9 @@ function CLoseModalButton(){
 
 // save btn button
 function handleModalPrimaryBtn() {
-     const data = window.abqarino_popup_var;
+    const data = window.abqarino_popup_var;
     const btn = document.querySelector('.ok-modal-btn');
-    
+
     btn.addEventListener('click', () => {
         window.location.href = data.btn_link;
     });
@@ -166,6 +176,35 @@ function handleModalPrimaryBtn() {
 
 }
 
+// promotion code 
+function CopyPromotionCode(params) {
+    const copyBtn = document.getElementById("copyBtn");
+    const copyText = document.getElementById("copyText");
+
+    copyBtn.addEventListener("click", async () => {
+        try {
+            await navigator.clipboard.writeText(copyText.innerText);
+
+            // Change button state
+            copyBtn.classList.add("active");
+            copyBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+            </svg> `;
+
+            // Reset after 2 seconds
+            setTimeout(() => {
+                copyBtn.classList.remove("active");
+                copyBtn.textContent = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 0 1-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 0 1 1.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 0 0-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 0 1-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 0 0-3.375-3.375h-1.5a1.125 1.125 0 0 1-1.125-1.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H9.75" />
+                    </svg>`;
+            }, 2000);
+
+        } catch (err) {
+            console.error("Copy failed:", err);
+        }
+    });
+
+}
 // css style
 function injectStyle() {
     const data = window.abqarino_popup_var;
@@ -251,6 +290,7 @@ function injectStyle() {
         }
 
         .product-card .sale_price {
+            color:red;
             font-weight: 700;
             font-size: 1.3rem;
         }
@@ -274,7 +314,6 @@ function injectStyle() {
             font-weight: bold;
             cursor: pointer;
             user-select: none;
-            text-decoration: none;
         }
             .product-card button:hover{
                 background:transparent;
@@ -285,8 +324,30 @@ function injectStyle() {
             border: none;
             color: white;
             cursor: pointer;
-            text-decoration: underline;
             font-size: 0.9rem;
+        }
+        .cancel-btn{
+            text-decoration: underline;
+        }
+        .copy-box {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            border: 1px dashed #3cb646;
+            border-radius: 6px;
+            background-color: #e3f2fd;
+        }
+
+        .copy-btn {
+            cursor: pointer;
+            border: none;
+            background: transparent;
+            font-size: 16px;
+        }
+
+        .copy-btn.active {
+            color: green;
         }
 
     `;
