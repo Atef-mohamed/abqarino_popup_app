@@ -46,7 +46,7 @@ function CreateModal() {
         <div style="padding:20px; text-align:center; background:${data.bg_color};display:flex; flex-direction:column; justify-content:center; align-items:center; border-radius:${data.raduis_border}px;">
         <div class="content-top-side"  style="width:80%;display:flex; text-align:center; justify-content:space-between; align-items:center; flex-wrap: wrap;">
         
-            <img src="${data.brand_logo}" style="max-width:250px; margin-bottom:15px;" />
+            <img src="${data.brand_logo}" style="max-width:250px; margin-bottom:15px;border-raduis:16px;" />
             
             <div class="content">
                 <p style="color:${data.txt_color}; font-size:18px;">
