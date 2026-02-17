@@ -116,12 +116,57 @@ function CreateModal() {
 }
 
 // get product
+// get products
 function getProduct() {
+    const productIds = window.abqarino_popup_var.dropdown_list;
 
-    const productId = window.abqarino_popup_var.dropdown_list;
+    // ✅ loop على كل ID في الـ array
+    const requests = productIds.map(id =>
+        salla.product.getDetails(id, ["brand", "category"]).then(response => {
+            return response.data || response;
+        })
+    );
 
-    return salla.product.getDetails(productId).then(response => {
-        return response.data || response;
+    return Promise.all(requests);
+}
+
+// render products
+function renderProduct(products) {
+    const productContainer = document.querySelector("#product-card");
+    if (!productContainer) return;
+
+    productContainer.innerHTML = "";
+
+    products.forEach(product => {
+        const card = document.createElement("div");
+        card.classList.add("product-item");
+
+        card.innerHTML = `
+            <div class="product-img">
+                ${product.image ? `<img src="${product.image.url}" alt="${product.name}" style="max-width:100%;">` : ""}
+            </div>
+            <div class="product-content">
+                <h3 class="product-title">${product.name}</h3>
+                ${product.brand?.name ? `<p class="brand-name">${product.brand.name}</p>` : ""}
+                <p class="prices">
+                    <span class="sale_price">
+                        ${product.sale_price ? `${product.sale_price} ${product.currency}` : ""}
+                    </span>
+                    <span class="discount_price">
+                        ${product.regular_price ? `${product.regular_price} ${product.currency}` : ""}
+                    </span>
+                </p>
+                <div class="product-buttons">
+                    <salla-add-product-button width="wide" product-id="${product.id}">
+                        Add to Cart
+                    </salla-add-product-button>
+                    <button class="cancel-btn" style="background:transparent; border:none; cursor:pointer;">
+                        لا, شكرا
+                    </button>
+                </div>
+            </div>
+        `;
+
     });
 }
 
@@ -223,6 +268,7 @@ function CopyPromotionCode(params) {
     });
 
 }
+
 // css style
 function injectStyle() {
     const data = window.abqarino_popup_var;
