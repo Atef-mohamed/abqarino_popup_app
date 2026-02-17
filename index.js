@@ -43,8 +43,8 @@ function CreateModal() {
     modal.id = "subscribe-modal";
 
     modal.innerHTML = `
-        <div style="padding:20px; text-align:center; background:${data.bg_color};display:flex; flex-direction:columns; justify-content:center; align-items:center; border-radius:${data.raduis_border}px;">
-        <div class="content-top-side"  style="display:flex; text-align:center; justify-content:center; align-items:center;>
+        <div style="padding:20px; text-align:center; background:${data.bg_color};display:flex; flex-direction:column; justify-content:center; align-items:center; border-radius:${data.raduis_border}px;">
+        <div class="content-top-side"  style="display:flex; text-align:center; justify-content:center; align-items:center;">
         
             <img src="${data.brand_logo}" style="max-width:120px; margin-bottom:15px;" />
             
@@ -78,26 +78,26 @@ function CreateModal() {
             </div>
         </div>
            
-         <div id="product-card" class="product-card">
-                <div class="product-img">
-                
-                </div>
-                <div class="product-content">
-                    <h3 class="product-title"></h3>
-                    <p class="prices">
-                        <span class="sale_price"></span>
-                        <span class="discount_price"></span>
-                    </p>
-                    <div class="product-buttons">
-                        <salla-add-product-button width="wide" product-id="">
-                            Add to Cart
-                        </salla-add-product-button>
-                        <button class="cancel-btn" style="background:transparent; border:none; cursor:pointer;">
-                            لا,شكرا
-                        </button>
+            <div id="product-card" class="product-card">
+                    <div class="product-img">
+                    
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title"></h3>
+                        <p class="prices">
+                            <span class="sale_price"></span>
+                            <span class="discount_price"></span>
+                        </p>
+                        <div class="product-buttons">
+                            <salla-add-product-button width="wide" product-id="">
+                                Add to Cart
+                            </salla-add-product-button>
+                            <button class="cancel-btn" style="background:transparent; border:none; cursor:pointer;">
+                                لا,شكرا
+                            </button>
+                        </div>
                     </div>
                 </div>
-            </div>
         </div>
     `;
 
