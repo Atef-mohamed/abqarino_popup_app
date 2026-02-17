@@ -332,21 +332,24 @@ function injectStyle() {
         .copy-box {
             display: flex;
             align-items: center;
-            justify-content:space-between;
+            justify-content: space-between;
             gap: 8px;
             padding: 8px 12px;
             border: 1px dashed #3cb646;
             border-radius: 6px;
             background-color: #e3f2fd;
-        }
 
+            white-space: nowrap;        
+        }
         .copy-btn {
-            display:contents;
+            display: flex;             
+            align-items: center;
             cursor: pointer;
             border: none;
             background: transparent;
-            font-size: 16px;
+            flex-shrink: 0;            
         }
+
 
         .copy-btn.active {
             color: green;
