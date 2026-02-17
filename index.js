@@ -2,10 +2,9 @@
 salla.onReady(() => {
     CreateModal();
 
-    getProduct().then(products => {
-        renderProduct(products);
+    getProduct().then(product => {
+        renderProduct(product);
     });
-    console.log(getProduct());
     injectStyle();
 
     CLoseModalButton();
@@ -87,7 +86,11 @@ function CreateModal() {
 
             </div>
         </div>
-           
+           ${data.dropdown_list ? `
+                <div id="product-card" class="product-card">
+                    
+                </div>
+                `: ``}
         </div>
     `;
 
