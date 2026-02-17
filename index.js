@@ -86,7 +86,7 @@ function CreateModal() {
 
             </div>
         </div>
-           ${data.discount_time ? `
+           ${data.dropdown_list ? `
                 <div id="product-card" class="product-card">
                     <div class="product-img">
                     
