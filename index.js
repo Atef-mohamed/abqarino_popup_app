@@ -96,10 +96,13 @@ function CreateModal() {
 }
 
 // get product
-// get products
 function getProduct() {
-    const productIds = window.abqarino_popup_var.dropdown_list;
-    console.log("idd",productIds);
+    const raw = window.abqarino_popup_var.dropdown_list;
+    
+    const productIds = Array.isArray(raw) ? raw : JSON.parse(raw);
+    
+    console.log("ids", productIds);
+
     const requests = productIds.map(id =>
         salla.product.getDetails(id, ["brand", "category"]).then(response => {
             return response.data || response;
