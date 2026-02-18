@@ -388,7 +388,7 @@ function injectStyle() {
         .s-count-down-item-value {
             background: ${mainColor};
             color: #ffffff;
-            padding: 10px 14px;
+            padding: 10px 27px;
             border-radius: 8px;
             font-size: 20px;
             font-weight: bold;
