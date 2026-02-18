@@ -179,18 +179,13 @@ function renderProducts(products) {
         //  Slider config
         const sliderConfig = {
             autoHeight: true,
-            direction: "horizontal",
             loop: true,
             keyboard: { enabled: true },
             grabCursor: true,
             speed: 500,
+            slidesPerView: 1,
             spaceBetween: 10,
 
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-                dynamicBullets: true
-            },
             breakpoints: {
                 768: {
                     slidesPerView: 1,
@@ -208,7 +203,6 @@ function renderProducts(products) {
         <salla-slider id="products-slider" show-controls="true" type="carousel" slider-config='${JSON.stringify(sliderConfig)}'>
             <div slot="items" class="products-slides"></div>
         </salla-slider>
-        <div class="swiper-pagination"></div>
     `;
 
         //  Get slides container
