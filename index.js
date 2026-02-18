@@ -444,13 +444,13 @@ function injectStyle() {
         .product-card .sale_price {
             color: red;
             font-weight: 700;
-            font-size: 1.3rem;
+            font-size: 1rem;
         }
 
         .product-card .discount_price {
             text-decoration: line-through;
             opacity: 0.5;
-            font-size: 1rem;
+            font-size: 0.8rem;
         }
 
         .product-card .product-buttons {
