@@ -521,6 +521,9 @@ function injectStyle() {
             border-radius: 6px;
             white-space: nowrap;        
         }
+            #copyText{
+                color: #3cb646;
+            }
         
         .copy-box p {
             color: #3cb646;
