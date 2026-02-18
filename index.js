@@ -99,9 +99,9 @@ function CreateModal() {
 // get product
 function getProduct() {
     const raw = window.abqarino_popup_var.dropdown_list;
-    
+
     const productIds = Array.isArray(raw) ? raw : JSON.parse(raw);
-    
+
     console.log("ids", productIds);
 
     const requests = productIds.map(id =>
@@ -120,80 +120,141 @@ function renderProducts(products) {
     if (!container) return;
 
     container.innerHTML = "";
-
-    //  If more than one product => use slider
-    if (products.length > 1) {
-
-        const slider = document.createElement("salla-slider");
-        slider.setAttribute("id", "T_side_banner-{{position}}-carousel");
-        slider.setAttribute("show-controls", "true");
-        slider.setAttribute("type", "carousel");
-        slider.setAttribute("slider-config", '{{ slider_config|json_encode }}');
-
-        const sliderItems = document.createElement("div");
-        sliderItems.setAttribute("slot", "items");
-
+    if (products.length === 1) {
         products.forEach(product => {
-            sliderItems.appendChild(createProductCard(product));
+
+            const productCard = document.createElement("div");
+            productCard.classList.add("product-card");
+
+            productCard.innerHTML = `
+            <div class="product-img">
+                ${product.image ? `
+                    <img src="${product.image.url}" 
+                         alt="${product.name}"
+                         style="max-width:100%;">
+                ` : ``}
+            </div>
+
+            <div class="product-content">
+                <h3 class="product-title">${product.name || ""}</h3>
+
+                <p class="prices">
+                    ${product.sale_price ? `
+                        <span class="sale_price">
+                            ${product.sale_price} ${product.currency || ""}
+                        </span>
+                    ` : ``}
+
+                    ${product.regular_price ? `
+                        <span class="discount_price">
+                            ${product.regular_price} ${product.currency || ""}
+                        </span>
+                    ` : ``}
+                </p>
+
+                <div class="product-buttons">
+                    <salla-add-product-button 
+                        width="wide" 
+                        product-id="${product.id}">
+                        Add to Cart
+                    </salla-add-product-button>
+
+                </div>
+            </div>
+        `;
+            container.appendChild(productCard);
         });
+    }
+    else {
+        //  Slider config
+        const sliderConfig = {
+            autoHeight: true,
+            direction: "horizontal",
+            loop: true,
+            keyboard: { enabled: true },
+            grabCursor: true,
+            speed: 500,
+            slidesPerView: 1,
+            spaceBetween: 20,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+                dynamicBullets: true
+            }
+        };
 
-        slider.appendChild(sliderItems);
-        container.appendChild(slider);
+        // Create slider wrapper
+        container.innerHTML = `
+        <salla-slider id="products-slider" show-controls="true" type="carousel" slider-config='${JSON.stringify(sliderConfig)}'>
+            <div slot="items" class="products-slides"></div>
+        </salla-slider>
+        <div class="swiper-pagination"></div>
+    `;
 
-    } else {
-        //  If only one product => render card
+        //  Get slides container
+        const slidesContainer = container.querySelector(".products-slides");
+
+        // Loop products and add to slider
         products.forEach(product => {
-            container.appendChild(createProductCard(product));
+            const productCard = document.createElement("div");
+            productCard.classList.add("product-card", "swiper-slide");
+
+            productCard.innerHTML = `
+            <div class="product-img">
+                ${product.image ? `
+                    <img src="${product.image.url}" 
+                         alt="${product.name}"
+                         style="max-width:100%;">
+                ` : ""}
+            </div>
+
+            <div class="product-content">
+                <h3 class="product-title">${product.name || ""}</h3>
+
+                ${product.brand?.name ? `
+                    <p class="brand-name">${product.brand.name}</p>
+                ` : ""}
+
+                <p class="prices">
+                    ${product.sale_price ? `
+                        <span class="sale_price">
+                            ${product.sale_price} ${product.currency || ""}
+                        </span>
+                    ` : ""}
+
+                    ${product.regular_price ? `
+                        <span class="discount_price">
+                            ${product.regular_price} ${product.currency || ""}
+                        </span>
+                    ` : ""}
+                </p>
+
+                <div class="product-buttons">
+                    <salla-add-product-button 
+                        width="wide" 
+                        product-id="${product.id}">
+                        Add to Cart
+                    </salla-add-product-button>
+                    <button class="cancel-btn" style="background:transparent; border:none; cursor:pointer;">
+                        لا, شكرا
+                    </button>
+                </div>
+            </div>
+        `;
+
+            // Cancel button
+            const cancelBtn = productCard.querySelector(".cancel-btn");
+            if (cancelBtn) {
+                cancelBtn.addEventListener("click", () => {
+                    productCard.style.display = "none";
+                });
+            }
+
+            //  Append to slider
+            slidesContainer.appendChild(productCard);
         });
     }
 }
-
-// product card function
-function createProductCard(product) {
-
-    const productCard = document.createElement("div");
-    productCard.classList.add("product-card");
-
-    productCard.innerHTML = `
-        <div class="product-img">
-            ${product.image ? `
-                <img src="${product.image.url}" 
-                     alt="${product.name}"
-                     style="max-width:100%;">
-            ` : ``}
-        </div>
-
-        <div class="product-content">
-            <h3 class="product-title">${product.name || ""}</h3>
-
-            <p class="prices">
-                ${product.sale_price ? `
-                    <span class="sale_price">
-                        ${product.sale_price} ${product.currency || ""}
-                    </span>
-                ` : ``}
-
-                ${product.regular_price ? `
-                    <span class="discount_price">
-                        ${product.regular_price} ${product.currency || ""}
-                    </span>
-                ` : ``}
-            </p>
-
-            <div class="product-buttons">
-                <salla-add-product-button 
-                    width="wide" 
-                    product-id="${product.id}">
-                    Add to Cart
-                </salla-add-product-button>
-
-            </div>
-        </div>
-    `;
-
-    return productCard;
-}
-
 
 
 
