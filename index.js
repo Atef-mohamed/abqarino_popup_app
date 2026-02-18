@@ -43,7 +43,7 @@ function CreateModal() {
 
     modal.innerHTML = `
         <div style="padding:20px; text-align:center; background:${data.bg_color};display:flex; flex-direction:column; justify-content:center; align-items:center; border-radius:${data.raduis_border}px;">
-        <div class="content-top-side"  style="width:80%;display:flex; text-align:center; justify-content: center; align-items:center; flex-wrap: wrap; gap: 40px;">
+        <div class="content-top-side"  style="width:80%;display:flex; text-align:center; justify-content: center; align-items:center; flex-wrap: wrap; gap: 100px;">
             ${data.brand_logo ? `
             <img src="${data.brand_logo}" style="max-width:250px; margin-bottom:15px;border-radius: 4px;" />
             `: ``}
@@ -76,7 +76,7 @@ function CreateModal() {
                         ${data.txt_btn_ok}
                     </button>
                     `: ``}
-                    
+
                 ${data.txt_btn_cancel ? `
                 <button class="close-modal-btn" style="background:transparent; border:none; text-decoration: underline; cursor:pointer;">
                     ${data.txt_btn_cancel}
@@ -338,7 +338,7 @@ function injectStyle() {
             background-color: ${bgColor};
             overflow: hidden;
         }
-         #subscribe-modal .s-modal-body {
+        #subscribe-modal .s-modal-body {
             max-width: 70% !important;
         }           
         #subscribe-modal .s-modal-content {
