@@ -42,7 +42,7 @@ function CreateModal() {
     modal.id = "subscribe-modal";
 
     modal.innerHTML = `
-        <div style="padding:20px; text-align:center; background:${data.bg_color};display:flex; flex-direction:column; justify-content:center; align-items:center; border-radius:${data.raduis_border}px;">
+        <div style="max-height: 80vh;padding:20px; text-align:center; background:${data.bg_color};display:flex; flex-direction:column; justify-content:center; align-items:center; border-radius:${data.raduis_border}px;">
         <div class="content-top-side"  >
             ${data.brand_logo ? `
             <img src="${data.brand_logo}" style="    border-radius: 12px;
@@ -342,6 +342,12 @@ function injectStyle() {
         align-items: center;
         gap: 90px;
     }
+        @media (max-width:768) {
+             .content-top-side{
+                grid-template-columns: repeat(1, 1fr);
+                gap: 0px;
+            }
+        }
         #subscribe-modal {
             background-color: ${bgColor};
             overflow: hidden;
