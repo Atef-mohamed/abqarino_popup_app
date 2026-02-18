@@ -410,7 +410,7 @@ function injectStyle() {
         }
         
        #subscribe-modal .s-count-down-item-label {
-            font-size:14px
+            font-size:14px;
             margin-top: 4px;
         }
             
