@@ -177,20 +177,24 @@ function renderProducts(products) {
         });
     }
     else {
-        //  Slider config
+       //  Slider config
         const sliderConfig = {
             autoHeight: true,
+            loop: true,
+            keyboard: { enabled: true },
             grabCursor: true,
             speed: 500,
-            slidesPerView: 4,
+            slidesPerView: 1,
             spaceBetween: 10,
-            centeredSlides: true,
-            loop: true,
 
             breakpoints: {
                 768: {
                     slidesPerView: 1,
                     spaceBetween: 20
+                },
+                1024: {
+                    slidesPerView: 4,
+                    spaceBetween: 10
                 }
             }
         };
