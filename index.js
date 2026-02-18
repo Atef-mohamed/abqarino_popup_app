@@ -337,9 +337,10 @@ function injectStyle() {
 
     style.innerHTML = `
     .content-top-side{
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+        align-items: center;
     }
         #subscribe-modal {
             background-color: ${bgColor};
