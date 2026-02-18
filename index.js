@@ -181,7 +181,6 @@ function renderProducts(products) {
         const sliderConfig = {
             autoHeight: true,
             loop: true,
-            keyboard: { enabled: true },
             grabCursor: true,
             speed: 500,
             slidesPerView: 1,
