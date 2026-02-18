@@ -180,11 +180,17 @@ function renderProducts(products) {
         //  Slider config
         const sliderConfig = {
             autoHeight: true,
-
             grabCursor: true,
             speed: 500,
-            slidesPerView: 1,
+            slidesPerView: 4,
             spaceBetween: 10,
+            centeredSlides: true,
+            slidesPerGroup: 1,
+            loop: false,
+            freeMode: false,
+            shortSwipes: false,
+            longSwipes: true,
+            longSwipesRatio: 0.1,
 
             breakpoints: {
                 768: {
@@ -196,7 +202,7 @@ function renderProducts(products) {
 
         // Create slider wrapper
         container.innerHTML = `
-        <salla-slider id="products-slider" show-controls="true" type="carousel" slider-config='${JSON.stringify(sliderConfig)}'>
+        <salla-slider id="products-slider" show-controls="true" slider-config='${JSON.stringify(sliderConfig)}'>
             <div slot="items" class="products-slides"></div>
         </salla-slider>
     `;
