@@ -163,11 +163,11 @@ function renderProducts(products) {
                 </p>
 
                 <div class="product-buttons">
+                    <i class="text-base sicon-shopping-bag"></i>
                     <salla-add-product-button 
                         product-id="${product.id}">
                         <i class="text-base sicon-shopping-bag"></i>
                     </salla-add-product-button>
-
                 </div>
             </div>
         `;
