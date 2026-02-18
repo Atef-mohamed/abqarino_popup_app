@@ -356,6 +356,9 @@ function injectStyle() {
             background-color: ${bgColor};
             overflow: hidden;
         }
+        #subscribe-modal   .s-modal-close{
+            background-color: ${bgColor};
+        }
         #subscribe-modal .s-modal-body {
             max-width: 70% !important;
         }      
@@ -368,7 +371,9 @@ function injectStyle() {
             overflow: hidden;
             max-width: 100%;
         }
-
+        #subscribe-modal .swiper-slide{
+            width:unset !important;
+        }
         .products-container {
             overflow: hidden;
         }
@@ -443,7 +448,7 @@ function injectStyle() {
         .product-card .product-content {
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            align-items: flex-start;
             gap: 12px;
         }
 
@@ -536,6 +541,11 @@ function injectStyle() {
         .copy-btn.active {
             color: green;
         }
+            .product-content-bottom{
+                display: flex;
+                gap: 20px;
+                flex-wrap: wrap;
+            }
     `;
 
     document.head.appendChild(style);
