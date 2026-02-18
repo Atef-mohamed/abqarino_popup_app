@@ -352,7 +352,7 @@ function injectStyle() {
                 gap: 0px !important;
             }
         }
-        #subscribe-modal {
+        #subscribe-modal  s-modal-body{
             background-color: ${bgColor};
             overflow: hidden;
         }
