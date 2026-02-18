@@ -363,7 +363,7 @@ function injectStyle() {
         }      
         @media (max-width:768px){
          #subscribe-modal .s-modal-body {
-            max-width: 750px !important;
+            max-width: 95% !important;
         }  
         }     
         #subscribe-modal .s-modal-content {
@@ -423,7 +423,6 @@ function injectStyle() {
             border-radius: 12px;
             padding: 5px;
             color:var(--color-primary-reverse);
-            width: 30%;
             height: auto;
             box-sizing: border-box;
         }
@@ -479,7 +478,6 @@ function injectStyle() {
 
        #subscribe-modal  .product-card salla-add-product-button {
             background:var(--color-primary-light);
-            border-radius: 50px;
             font-weight: bold;
             cursor: pointer;
             user-select: none;
