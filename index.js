@@ -52,7 +52,7 @@ function CreateModal() {
             
             <div class="content" style="display: flex;flex-direction: column;">
                 ${data.brand_description ? `
-                <p style="color:${data.txt_color}; font-size: 33px;font-weight: 700;padding: 20px;">
+                <p style="color:var(--color-primary); font-size: 33px;font-weight: 700;padding: 20px;">
                     ${data.brand_description}
                 </p>
                 `: ``}
@@ -74,7 +74,7 @@ function CreateModal() {
                 `: ``}
 
              ${data.bg_btn_color ? `
-                    <button class="ok-modal-btn" style="background:${data.bg_btn_color}; color:#fff; padding:10px 20px; border:none; border-radius:8px; cursor:pointer;">
+                    <button class="ok-modal-btn" style="background: var(--color-primary); color:var(--color-primary-reverse); padding:10px 20px; border:none; border-radius:8px; cursor:pointer;">
                         ${data.txt_btn_ok}
                     </button>
                     `: ``}
@@ -407,7 +407,7 @@ function injectStyle() {
 
         .s-count-down-item-value {
             background: ${mainColor};
-            color: #ffffff;
+            color: var(--color-primary-reverse);
             padding: 10px 27px;
             border-radius: 8px;
             font-size: 20px;
@@ -428,7 +428,7 @@ function injectStyle() {
             backdrop-filter: contrast(0.5);
             border-radius: 12px;
             padding: 5px;
-            color: #fff;
+            color:var(--color-primary-reverse);
             width: 30%;
             height: auto;
             box-sizing: border-box;
@@ -465,7 +465,7 @@ function injectStyle() {
         }
 
         .product-card .sale_price {
-            color: red;
+            color: var(--color-primary);
             font-weight: 700;
             font-size: 1rem;
         }
@@ -484,8 +484,8 @@ function injectStyle() {
         }
 
         .product-card salla-add-product-button {
-            background: ${mainColor};
-            color: #ffffff;
+            background:var(--color-primary);
+            color:var(--color-primary-reverse)
             border-radius: 50px;
             font-weight: bold;
             cursor: pointer;
