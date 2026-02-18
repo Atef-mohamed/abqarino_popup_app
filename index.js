@@ -407,25 +407,23 @@ function injectStyle() {
             border-radius: 12px;
             padding: 20px;
             color: #fff;
-            width: 100%;
+            width: 30%;
+            height: auto;
             box-sizing: border-box;
         }
 
         .product-card .product-img {
-            flex: 0 0 100px; 
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 0 10px rgba(0,0,0,0.7);
+            flex: 0 0 70px; 
         }
 
         .product-card .product-img img {
             width: 100%;
             height: auto;
             display: block;
+            border-radius:4px;
         }
 
         .product-card .product-content {
-            flex: 1;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -439,7 +437,6 @@ function injectStyle() {
         }
 
         .product-card .prices {
-            font-size: 1rem;
             display: flex;
             align-items: center;
             gap: 10px;
