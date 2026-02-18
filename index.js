@@ -57,6 +57,11 @@ function CreateModal() {
                     ${data.brand_description}
                 </p>
                 `: ``}
+                ${data.brand_description2 ? `
+                <p style="color:var(--color-primary);opacity:0.7 font-size:22px;padding: 20px;">
+                    ${data.brand_description2}
+                </p>
+                `: ``}
 
                 ${data.discount_time ? `
                     <salla-count-down date="${formatDate(data.discount_time)}" end-of-day="true" boxed="true" labeled="true"></salla-count-down>
