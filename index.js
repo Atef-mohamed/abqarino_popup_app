@@ -340,6 +340,7 @@ function injectStyle() {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         align-items: center;
+        gap: 90px;
     }
         #subscribe-modal {
             background-color: ${bgColor};
