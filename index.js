@@ -283,19 +283,17 @@ function CLoseModalButton() {
     }
 }
 
-// save btn button
 function handleModalPrimaryBtn() {
     const data = window.abqarino_popup_var;
     const btn = document.querySelector('.ok-modal-btn');
-    if (data.btn_link) {
-        
-        btn.addEventListener('click', () => {
-            window.location.href = data.btn_link;
-        });
-    }
 
+    if (!btn || !data?.btn_link) return;
 
+    btn.addEventListener('click', () => {
+        window.location.href = data.btn_link;
+    });
 }
+
 
 // promotion code 
 function CopyPromotionCode(params) {
