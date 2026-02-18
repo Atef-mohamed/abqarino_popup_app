@@ -174,7 +174,6 @@ function renderProducts(products) {
             keyboard: { enabled: true },
             grabCursor: true,
             speed: 500,
-            slidesPerView: 1,
             spaceBetween: 20,
             pagination: {
                 el: '.swiper-pagination',
