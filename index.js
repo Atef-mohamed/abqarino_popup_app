@@ -228,7 +228,7 @@ function renderProducts(products) {
                 ${product.brand?.name ? `
                     <p class="brand-name">${product.brand.name}</p>
                 ` : ""}
-                    <div class="product-content">
+                    <div class="product-content-bottom">
                         <p class="prices">
                             ${product.sale_price ? `
                                 <span class="sale_price">
