@@ -521,11 +521,11 @@ function injectStyle() {
             border-radius: 6px;
             white-space: nowrap;        
         }
-            #copyText{
-                color: #3cb646;
-            }
-        .copyBtn{
-                color: #3cb646;
+        #copyText{
+            color: #3cb646;
+        }
+        #copyBtn{
+            color: #3cb646;
             
         }
         .copy-box p {
