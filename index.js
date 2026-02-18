@@ -185,12 +185,7 @@ function renderProducts(products) {
             slidesPerView: 4,
             spaceBetween: 10,
             centeredSlides: true,
-            slidesPerGroup: 1,
-            loop: false,
-            freeMode: false,
-            shortSwipes: false,
-            longSwipes: true,
-            longSwipesRatio: 0.1,
+            loop: true,
 
             breakpoints: {
                 768: {
