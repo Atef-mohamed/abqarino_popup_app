@@ -358,7 +358,7 @@ function injectStyle() {
         }      
         @media (max-width:768px){
          #subscribe-modal .s-modal-body {
-            max-width: 95% !important;
+            max-width: 100% !important;
         }  
         }     
         #subscribe-modal .s-modal-content {
