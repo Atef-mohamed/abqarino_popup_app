@@ -184,14 +184,23 @@ function renderProducts(products) {
             keyboard: { enabled: true },
             grabCursor: true,
             speed: 500,
-            slidesPerView: 4,
             spaceBetween: 10,
         
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
                 dynamicBullets: true
-            }
+            },
+            breakpoints: {
+                        768: {
+                            slidesPerView: 1,
+                            spaceBetween: 20
+                        },
+                        1024: {
+                            slidesPerView: 4,
+                            spaceBetween: 100
+                        }
+                    }
         };
 
         // Create slider wrapper
