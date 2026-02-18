@@ -42,7 +42,7 @@ function CreateModal() {
     modal.id = "subscribe-modal";
 
     modal.innerHTML = `
-        <div style="max-height: 90vh;padding:20px; text-align:center; background:${data.bg_color};display:flex; flex-direction:column; justify-content:center; align-items:center; border-radius:${data.raduis_border}px;">
+        <div class="modal-h" style="padding:20px; text-align:center; background:${data.bg_color};display:flex; flex-direction:column; justify-content:center; align-items:center; border-radius:${data.raduis_border}px;">
         <div class="content-top-side"  >
             ${data.brand_logo ? `
             <img src="${data.brand_logo}" style="    border-radius: 12px;
@@ -327,7 +327,6 @@ function CopyPromotionCode(params) {
 }
 
 // css style
-// css style
 function injectStyle() {
     const data = window.abqarino_popup_var;
     const bgColor = data.bg_color;
@@ -336,6 +335,11 @@ function injectStyle() {
     const style = document.createElement("style");
 
     style.innerHTML = `
+     @media (max-width:768px){
+        .modal-h{
+            max-height: 90vh;
+        }
+    }
     .content-top-side{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
