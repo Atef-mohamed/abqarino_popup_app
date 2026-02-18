@@ -51,7 +51,7 @@ function CreateModal() {
                 aspect-ratio: 1 / 1;" />
             `: ``}
             
-            <div class="content" style="display: flex;flex-direction: column;">
+            <div class="content" style="display: flex;flex-direction: column; ${!data.brand_logo ? 'align-items: center; text-align: center;' : ''}">
                 ${data.brand_description ? `
                 <p style="color:var(--color-primary); font-size: 33px;font-weight: 700;padding: 20px;">
                     ${data.brand_description}
@@ -335,9 +335,9 @@ function injectStyle() {
     }
     .content-top-side{
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: ${data.brand_logo ? 'repeat(2, 1fr)' : '1fr'};
         align-items: center;
-        gap: 90px;
+        gap: ${data.brand_logo ? '90px' : '0px'};
     }
         @media (max-width:768px){
             .content-top-side {
