@@ -342,10 +342,10 @@ function injectStyle() {
         align-items: center;
         gap: 90px;
     }
-        @media (max-width:768) {
+        @media (max-width:768px){
             .content-top-side{
-                grid-template-columns: repeat(1, 1fr);
-                gap: 0px;
+                grid-template-columns: repeat(1, 1fr) !important;
+                gap: 0px !important;
             }
         }
         #subscribe-modal {
