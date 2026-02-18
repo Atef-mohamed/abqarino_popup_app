@@ -374,25 +374,25 @@ function injectStyle() {
         #subscribe-modal .swiper-slide{
             width:unset !important;
         }
-        .products-container {
+      #subscribe-modal  .products-container {
             overflow: hidden;
         }
 
-        #products-slider {
+     #subscribe-modal   #products-slider {
             width: 100%;
             overflow: hidden;
         }
 
-        .products-slides {
+     #subscribe-modal   .products-slides {
             width: 100%;
         }
 
-        .swiper-pagination {
+      #subscribe-modal  .swiper-pagination {
             position: relative;
             margin-top: 15px;
         }
 
-        .s-count-down-list {
+      #subscribe-modal  .s-count-down-list {
             display: flex;
             align-items: center;
             list-style: none;
@@ -400,17 +400,18 @@ function injectStyle() {
             gap: 8px;
         }
 
-        .s-count-down-item {
+       #subscribe-modal .s-count-down-item {
             text-align: center;
             position: relative;
         }
         
-        .s-count-down-item-label {
-            font-size: 12px;
+       #subscribe-modal .s-count-down-item-label {
+            font-size: 24px;
+            font-weight: 700;
             margin-top: 4px;
         }
             
-        .product-card {
+      #subscribe-modal  .product-card {
             display: flex;
             gap: 20px;
             align-items: center;
@@ -424,56 +425,56 @@ function injectStyle() {
             box-sizing: border-box;
         }
 
-        .product-card .product-img {
+     #subscribe-modal   .product-card .product-img {
             flex: 0 0 95px; 
         }
 
-        .product-card .product-img img {
+      #subscribe-modal  .product-card .product-img img {
             width: 100%;
             height: auto;
             display: block;
             border-radius:4px;
         }
 
-        .product-card .product-content {
+      #subscribe-modal  .product-card .product-content {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
             gap: 12px;
         }
 
-        .product-card .product-title {
+     #subscribe-modal   .product-card .product-title {
             font-size: 1.25rem;
             font-weight: 700;
             margin: 0;
         }
 
-        .product-card .prices {
+      #subscribe-modal  .product-card .prices {
             display: flex;
             align-items: center;
             gap: 10px;
         }
 
-        .product-card .sale_price {
+      #subscribe-modal  .product-card .sale_price {
             color: var(--color-primary);
             font-weight: 700;
             font-size: 1rem;
         }
 
-        .product-card .discount_price {
+      #subscribe-modal  .product-card .discount_price {
             text-decoration: line-through;
             opacity: 0.5;
             font-size: 0.8rem;
         }
 
-        .product-card .product-buttons {
+      #subscribe-modal  .product-card .product-buttons {
             display: flex;
             align-items: center;
             gap: 15px;
             flex-wrap: wrap;
         }
 
-        .product-card salla-add-product-button {
+    #subscribe-modal    .product-card salla-add-product-button {
             background:var(--color-primary-light);
             border-radius: 50px;
             font-weight: bold;
@@ -482,11 +483,11 @@ function injectStyle() {
             border-radius: 16px;
         }
         
-        .product-card button:hover {
+      #subscribe-modal  .product-card button:hover {
             background: transparent;
         }
 
-        .product-card button {
+    #subscribe-modal    .product-card button {
             background: transparent;
             border: none;
             color: white;
@@ -494,11 +495,11 @@ function injectStyle() {
             font-size: 0.9rem;
         }
         
-        .cancel-btn {
+     #subscribe-modal   .cancel-btn {
             text-decoration: underline;
         }
         
-        .copy-box {
+    #subscribe-modal    .copy-box {
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -536,7 +537,7 @@ function injectStyle() {
         .copy-btn.active {
             color: green;
         }
-            .product-content-bottom{
+        #subscribe-modal   .product-content-bottom{
                 display: flex;
                 gap: 20px;
                 flex-wrap: wrap;
