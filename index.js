@@ -163,10 +163,11 @@ function renderProducts(products) {
                 </p>
 
                 <div class="product-buttons">
-                    <i class="text-base sicon-shopping-bag"></i>
                     <salla-add-product-button 
                         product-id="${product.id}">
-                        <i class="text-base sicon-shopping-bag"></i>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M6 2l1.5 4h9L18 2H6zm-1 6h14l-1.5 12h-11L5 8z"/>
+                            </svg>
                     </salla-add-product-button>
                 </div>
             </div>
