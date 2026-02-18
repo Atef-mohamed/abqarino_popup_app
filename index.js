@@ -50,7 +50,7 @@ function CreateModal() {
                 aspect-ratio: 1 / 1;" />
             `: ``}
             
-            <div class="content">
+            <div class="content" style="display: flex;flex-direction: column;">
                 ${data.brand_description ? `
                 <p style="color:${data.txt_color}; font-size: 33px;font-weight: 700;padding: 20px;">
                     ${data.brand_description}
@@ -492,6 +492,8 @@ function injectStyle() {
             display: flex;
             align-items: center;
             justify-content: space-between;
+            align-self: center;
+            width: 50%;
             gap: 8px;
             padding: 8px 12px;
             margin: 10px 0;
