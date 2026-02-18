@@ -160,16 +160,16 @@ function renderProducts(products) {
                             ${product.regular_price} ${product.currency || ""}
                         </span>
                     ` : ``}
+                    <div class="product-buttons">
+                        <salla-add-product-button 
+                            product-id="${product.id}">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M6 2l1.5 4h9L18 2H6zm-1 6h14l-1.5 12h-11L5 8z"/>
+                                </svg>
+                        </salla-add-product-button>
+                    </div>
                 </p>
 
-                <div class="product-buttons">
-                    <salla-add-product-button 
-                        product-id="${product.id}">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M6 2l1.5 4h9L18 2H6zm-1 6h14l-1.5 12h-11L5 8z"/>
-                            </svg>
-                    </salla-add-product-button>
-                </div>
             </div>
         `;
             container.appendChild(productCard);
