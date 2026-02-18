@@ -242,12 +242,12 @@ function renderProducts(products) {
                         </span>
                     ` : ""}
                     
-                                    <div class="product-buttons">
-                                        <salla-add-product-button 
-                                            product-id="${product.id}">
-                                             <i class="text-base sicon-shopping-bag"></i>
-                                        </salla-add-product-button>
-                                    </div>
+                    <div class="product-buttons">
+                        <salla-add-product-button 
+                            product-id="${product.id}">
+                                <i class="text-base sicon-shopping-bag"></i>
+                        </salla-add-product-button>
+                    </div>
                 </p>
             </div>
         `;
@@ -398,7 +398,7 @@ function injectStyle() {
             margin-bottom: 22px;
             background: #38352c65;
             border-radius: 12px;
-            padding: 20px;
+            padding: 5px;
             color: #fff;
             width: 30%;
             height: auto;
