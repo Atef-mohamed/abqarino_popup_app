@@ -519,7 +519,6 @@ function injectStyle() {
             margin: 10px 0;
             border: 1px dashed #3cb646;
             border-radius: 6px;
-            background-color: #e3f2fd;
             white-space: nowrap;        
         }
         
