@@ -484,12 +484,13 @@ function injectStyle() {
         }
 
         .product-card salla-add-product-button {
-            background:var(--color-primary);
-            color:var(--color-primary-reverse)
+            color:var(--color-primary);
+            background:var(--color-primary-reverse);
             border-radius: 50px;
             font-weight: bold;
             cursor: pointer;
             user-select: none;
+            border-radius: 16px;
         }
         
         .product-card button:hover {
