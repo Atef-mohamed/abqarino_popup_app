@@ -122,7 +122,7 @@ function renderProducts(products) {
     container.innerHTML = "";
 
     if (products.length === 1) {
-        container.style.width = "auto"; 
+        container.style.width = "auto";
         container.style.maxWidth = "600px";
         container.style.margin = "20px auto";
     } else {
@@ -185,22 +185,22 @@ function renderProducts(products) {
             grabCursor: true,
             speed: 500,
             spaceBetween: 10,
-        
+
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
                 dynamicBullets: true
             },
             breakpoints: {
-                        768: {
-                            slidesPerView: 1,
-                            spaceBetween: 20
-                        },
-                        1024: {
-                            slidesPerView: 4,
-                            spaceBetween: 100
-                        }
-                    }
+                768: {
+                    slidesPerView: 1,
+                    spaceBetween: 20
+                },
+                1024: {
+                    slidesPerView: 4,
+                    spaceBetween: 10
+                }
+            }
         };
 
         // Create slider wrapper
