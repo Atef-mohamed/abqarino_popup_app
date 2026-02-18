@@ -120,6 +120,16 @@ function renderProducts(products) {
     if (!container) return;
 
     container.innerHTML = "";
+
+    if (products.length === 1) {
+        container.style.width = "auto"; 
+        container.style.maxWidth = "600px";
+        container.style.margin = "20px auto";
+    } else {
+        container.style.width = "100%";
+        container.style.margin = "20px 0";
+    }
+
     if (products.length === 1) {
         products.forEach(product => {
 
@@ -334,8 +344,6 @@ function injectStyle() {
         }
 
         .products-container {
-
-            margin: 20px 0;
             overflow: hidden;
         }
 
