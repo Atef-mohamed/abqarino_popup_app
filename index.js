@@ -325,7 +325,7 @@ function injectStyle() {
             background-color: ${bgColor};
             overflow: hidden;
         }
-        .s-modal-body {
+         #subscribe-modal .s-modal-body {
             max-width: 70% !important;
         }           
         #subscribe-modal .s-modal-content {
