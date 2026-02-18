@@ -334,7 +334,7 @@ function injectStyle() {
         }
 
         .products-container {
-            width: 100%;
+
             margin: 20px 0;
             overflow: hidden;
         }
