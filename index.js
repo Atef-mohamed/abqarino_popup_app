@@ -160,6 +160,7 @@ function renderProducts(products) {
                             ${product.regular_price} ${product.currency || ""}
                         </span>
                     ` : ``}
+                    </p>
                     <div class="product-buttons">
                         <salla-add-product-button 
                             product-id="${product.id}">
@@ -168,7 +169,6 @@ function renderProducts(products) {
                                 </svg>
                         </salla-add-product-button>
                     </div>
-                </p>
 
             </div>
         `;
@@ -241,14 +241,14 @@ function renderProducts(products) {
                             ${product.regular_price} ${product.currency || ""}
                         </span>
                     ` : ""}
+                    
+                                    <div class="product-buttons">
+                                        <salla-add-product-button 
+                                            product-id="${product.id}">
+                                             <i class="text-base sicon-shopping-bag"></i>
+                                        </salla-add-product-button>
+                                    </div>
                 </p>
-
-                <div class="product-buttons">
-                    <salla-add-product-button 
-                        product-id="${product.id}">
-                         <i class="text-base sicon-shopping-bag"></i>
-                    </salla-add-product-button>
-                </div>
             </div>
         `;
 
