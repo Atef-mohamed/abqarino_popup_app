@@ -175,7 +175,7 @@ function renderProducts(products) {
             grabCursor: true,
             speed: 500,
             slidesPerView: 4,
-            spaceBetween: 20,
+            spaceBetween: 10,
         
             pagination: {
                 el: '.swiper-pagination',
@@ -323,6 +323,7 @@ function injectStyle() {
     style.innerHTML = `
         #subscribe-modal {
             background-color: ${bgColor};
+            max-width: 70% !important;
             overflow: hidden;
         }
         
