@@ -414,7 +414,7 @@ function injectStyle() {
             margin-top: 4px;
         }
             
-      #subscribe-modal  .product-card {
+      #subscribe-modal .product-card {
             display: flex;
             gap: 20px;
             align-items: center;
@@ -428,31 +428,31 @@ function injectStyle() {
             box-sizing: border-box;
         }
 
-     #subscribe-modal   .product-card .product-img {
+      #subscribe-modal .product-card .product-img {
             flex: 0 0 95px; 
         }
 
-      #subscribe-modal  .product-card .product-img img {
+       #subscribe-modal .product-card .product-img img {
             width: 100%;
             height: auto;
             display: block;
             border-radius:4px;
         }
 
-      #subscribe-modal  .product-card .product-content {
+       #subscribe-modal .product-card .product-content {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
             gap: 12px;
         }
 
-     #subscribe-modal   .product-card .product-title {
+      #subscribe-modal  .product-card .product-title {
             font-size: 1.25rem;
             font-weight: 700;
             margin: 0;
         }
 
-      #subscribe-modal  .product-card .prices {
+      #subscribe-modal .product-card .prices {
             display: flex;
             align-items: center;
             gap: 10px;
@@ -464,20 +464,20 @@ function injectStyle() {
             font-size: 1rem;
         }
 
-      #subscribe-modal  .product-card .discount_price {
+       #subscribe-modal  .product-card .discount_price {
             text-decoration: line-through;
             opacity: 0.5;
             font-size: 0.8rem;
         }
 
-      #subscribe-modal  .product-card .product-buttons {
+       #subscribe-modal  .product-card .product-buttons {
             display: flex;
             align-items: center;
             gap: 15px;
             flex-wrap: wrap;
         }
 
-    #subscribe-modal    .product-card salla-add-product-button {
+       #subscribe-modal  .product-card salla-add-product-button {
             background:var(--color-primary-light);
             border-radius: 50px;
             font-weight: bold;
@@ -486,11 +486,11 @@ function injectStyle() {
             border-radius: 16px;
         }
         
-      #subscribe-modal  .product-card button:hover {
+        #subscribe-modal .product-card button:hover {
             background: transparent;
         }
 
-    #subscribe-modal    .product-card button {
+        #subscribe-modal .product-card button {
             background: transparent;
             border: none;
             color: white;
@@ -498,11 +498,11 @@ function injectStyle() {
             font-size: 0.9rem;
         }
         
-     #subscribe-modal   .cancel-btn {
+        #subscribe-modal .cancel-btn {
             text-decoration: underline;
         }
         
-    #subscribe-modal    .copy-box {
+        #subscribe-modal .copy-box {
             display: flex;
             align-items: center;
             justify-content: space-between;
