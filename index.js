@@ -43,14 +43,16 @@ function CreateModal() {
 
     modal.innerHTML = `
         <div style="padding:20px; text-align:center; background:${data.bg_color};display:flex; flex-direction:column; justify-content:center; align-items:center; border-radius:${data.raduis_border}px;">
-        <div class="content-top-side"  style="width:80%;display:flex; text-align:center; justify-content: center; align-items:center; flex-wrap: wrap; gap: 100px;">
+        <div class="content-top-side"  >
             ${data.brand_logo ? `
-            <img src="${data.brand_logo}" style="max-width:250px; margin-bottom:15px;border-radius: 4px;" />
+            <img src="${data.brand_logo}" style="    border-radius: 12px;
+                object-fit: cover;
+                aspect-ratio: 1 / 1;" />
             `: ``}
             
             <div class="content">
                 ${data.brand_description ? `
-                <p style="color:${data.txt_color}; font-size:18px;">
+                <p style="color:${data.txt_color}; font-size: 33px;font-weight: 700;padding: 20px;">
                     ${data.brand_description}
                 </p>
                 `: ``}
@@ -334,6 +336,11 @@ function injectStyle() {
     const style = document.createElement("style");
 
     style.innerHTML = `
+    .content-top-side{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            width: 100%;
+    }
         #subscribe-modal {
             background-color: ${bgColor};
             overflow: hidden;
