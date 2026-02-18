@@ -323,10 +323,11 @@ function injectStyle() {
     style.innerHTML = `
         #subscribe-modal {
             background-color: ${bgColor};
-            max-width: 70% !important;
             overflow: hidden;
         }
-        
+        .s-modal-body {
+            max-width: 70% !important;
+        }           
         #subscribe-modal .s-modal-content {
             overflow: hidden;
             max-width: 100%;
