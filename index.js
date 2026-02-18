@@ -7,7 +7,7 @@ salla.onReady(() => {
     CLoseModalButton();
     handleModalPrimaryBtn()
     CopyPromotionCode();
-    
+
     getProduct().then(products => {
         renderProducts(products);
     });
@@ -105,8 +105,6 @@ function getProduct() {
 
     const productIds = Array.isArray(raw) ? raw : JSON.parse(raw);
 
-    console.log("ids", productIds);
-
     const requests = productIds.map(id =>
         salla.product.getDetails(id, ["brand", "category"]).then(response => {
             return response.data || response;
@@ -186,17 +184,13 @@ function renderProducts(products) {
             keyboard: { enabled: true },
             grabCursor: true,
             speed: 500,
-            slidesPerView: 1,
+            slidesPerView: auto,
             spaceBetween: 10,
 
             breakpoints: {
                 768: {
                     slidesPerView: 1,
                     spaceBetween: 20
-                },
-                1024: {
-                    slidesPerView: 4,
-                    spaceBetween: 10
                 }
             }
         };
