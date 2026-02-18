@@ -184,6 +184,7 @@ function renderProducts(products) {
             keyboard: { enabled: true },
             grabCursor: true,
             speed: 500,
+            slidesPerView: 1,
             spaceBetween: 10,
 
             breakpoints: {
