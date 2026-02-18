@@ -425,7 +425,7 @@ function injectStyle() {
             gap: 20px;
             align-items: center;
             margin-bottom: 22px;
-            background: #38352c65;
+            backdrop-filter: contrast(0.5);
             border-radius: 12px;
             padding: 5px;
             color: #fff;
