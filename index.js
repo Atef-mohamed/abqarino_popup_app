@@ -58,12 +58,6 @@ function CreateModal() {
                 ${data.discount_time ? `
                     <salla-count-down date="${formatDate(data.discount_time)}" end-of-day="true" boxed="true" labeled="true"></salla-count-down>
                 `: ``}
-
-                 ${data.bg_btn_color ? `
-                    <button class="ok-modal-btn" style="background:${data.bg_btn_color}; color:#fff; padding:10px 20px; border:none; border-radius:8px; cursor:pointer;">
-                        ${data.txt_btn_ok}
-                    </button>
-                    `: ``}
                 
                  ${data.procode_txt ? `
                         <div class="copy-box">
@@ -77,6 +71,12 @@ function CreateModal() {
                         </div>
                 `: ``}
 
+             ${data.bg_btn_color ? `
+                    <button class="ok-modal-btn" style="background:${data.bg_btn_color}; color:#fff; padding:10px 20px; border:none; border-radius:8px; cursor:pointer;">
+                        ${data.txt_btn_ok}
+                    </button>
+                    `: ``}
+                    
                 ${data.txt_btn_cancel ? `
                 <button class="close-modal-btn" style="background:transparent; border:none; text-decoration: underline; cursor:pointer;">
                     ${data.txt_btn_cancel}
