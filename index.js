@@ -287,10 +287,12 @@ function CLoseModalButton() {
 function handleModalPrimaryBtn() {
     const data = window.abqarino_popup_var;
     const btn = document.querySelector('.ok-modal-btn');
-
-    btn.addEventListener('click', () => {
-        window.location.href = data.btn_link;
-    });
+    if (data.btn_link) {
+        
+        btn.addEventListener('click', () => {
+            window.location.href = data.btn_link;
+        });
+    }
 
 
 }
