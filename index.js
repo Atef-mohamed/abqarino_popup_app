@@ -42,7 +42,7 @@ function CreateModal() {
     modal.id = "subscribe-modal";
 
     modal.innerHTML = `
-        <div style="max-height: 80vh;padding:20px; text-align:center; background:${data.bg_color};display:flex; flex-direction:column; justify-content:center; align-items:center; border-radius:${data.raduis_border}px;">
+        <div style="max-height: 90vh;padding:20px; text-align:center; background:${data.bg_color};display:flex; flex-direction:column; justify-content:center; align-items:center; border-radius:${data.raduis_border}px;">
         <div class="content-top-side"  >
             ${data.brand_logo ? `
             <img src="${data.brand_logo}" style="    border-radius: 12px;
