@@ -484,8 +484,7 @@ function injectStyle() {
         }
 
         .product-card salla-add-product-button {
-            color:var(--color-primary);
-            background:var(--color-primary-reverse);
+            background:var(--color-primary-light);
             border-radius: 50px;
             font-weight: bold;
             cursor: pointer;
