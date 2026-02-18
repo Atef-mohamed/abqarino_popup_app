@@ -404,16 +404,6 @@ function injectStyle() {
             text-align: center;
             position: relative;
         }
-
-        .s-count-down-item-value {
-            background: ${mainColor};
-            color: var(--color-primary-reverse);
-            padding: 10px 27px;
-            border-radius: 8px;
-            font-size: 20px;
-            font-weight: bold;
-            min-width: 40px;
-        }
         
         .s-count-down-item-label {
             font-size: 12px;
