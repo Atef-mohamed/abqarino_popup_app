@@ -406,7 +406,7 @@ function injectStyle() {
         }
 
         .product-card .product-img {
-            flex: 0 0 70px; 
+            flex: 0 0 95px; 
         }
 
         .product-card .product-img img {
