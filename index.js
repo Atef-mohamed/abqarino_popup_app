@@ -339,15 +339,24 @@ function injectStyle() {
     .content-top-side{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        width: 100%;
         align-items: center;
     }
         #subscribe-modal {
             background-color: ${bgColor};
-            
+            overflow: hidden;
         }
-                  
-       
+        #subscribe-modal .s-modal-body {
+            max-width: 70% !important;
+        }      
+        @media (max-width:768px){
+         #subscribe-modal .s-modal-body {
+            max-width: 0% ;
+        }  
+        }     
+        #subscribe-modal .s-modal-content {
+            overflow: hidden;
+            max-width: 100%;
+        }
 
         .products-container {
             overflow: hidden;
