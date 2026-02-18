@@ -313,6 +313,7 @@ function CopyPromotionCode(params) {
 }
 
 // css style
+// css style
 function injectStyle() {
     const data = window.abqarino_popup_var;
     const bgColor = data.bg_color;
@@ -322,8 +323,35 @@ function injectStyle() {
 
     style.innerHTML = `
         #subscribe-modal {
-            background-color:${bgColor};
+            background-color: ${bgColor};
+            overflow: hidden;
         }
+        
+        #subscribe-modal .s-modal-content {
+            overflow: hidden;
+            max-width: 100%;
+        }
+
+        .products-container {
+            width: 100%;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+
+        #products-slider {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .products-slides {
+            width: 100%;
+        }
+
+        .swiper-pagination {
+            position: relative;
+            margin-top: 15px;
+        }
+
         .s-count-down-list {
             display: flex;
             align-items: center;
@@ -346,6 +374,7 @@ function injectStyle() {
             font-weight: bold;
             min-width: 40px;
         }
+        
         .s-count-down-item-label {
             font-size: 12px;
             margin-top: 4px;
@@ -360,6 +389,8 @@ function injectStyle() {
             border-radius: 12px;
             padding: 20px;
             color: #fff;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .product-card .product-img {
@@ -397,7 +428,7 @@ function injectStyle() {
         }
 
         .product-card .sale_price {
-            color:red;
+            color: red;
             font-weight: 700;
             font-size: 1.3rem;
         }
@@ -412,19 +443,21 @@ function injectStyle() {
             display: flex;
             align-items: center;
             gap: 15px;
+            flex-wrap: wrap;
         }
 
         .product-card salla-add-product-button {
-            background:${mainColor};
-            color:#ffffff;
+            background: ${mainColor};
+            color: #ffffff;
             border-radius: 50px;
             font-weight: bold;
             cursor: pointer;
             user-select: none;
         }
-            .product-card button:hover{
-                background:transparent;
-            }
+        
+        .product-card button:hover {
+            background: transparent;
+        }
 
         .product-card button {
             background: transparent;
@@ -433,26 +466,29 @@ function injectStyle() {
             cursor: pointer;
             font-size: 0.9rem;
         }
-        .cancel-btn{
+        
+        .cancel-btn {
             text-decoration: underline;
         }
+        
         .copy-box {
             display: flex;
             align-items: center;
             justify-content: space-between;
             gap: 8px;
             padding: 8px 12px;
-            margin:10px 0;
+            margin: 10px 0;
             border: 1px dashed #3cb646;
             border-radius: 6px;
             background-color: #e3f2fd;
-
             white-space: nowrap;        
         }
-        .copy-box p{
-            color:#3cb646;
-            text-weight:semibold;
+        
+        .copy-box p {
+            color: #3cb646;
+            font-weight: 600;
         }
+        
         .copy-btn {
             display: flex;             
             align-items: center;
@@ -463,11 +499,9 @@ function injectStyle() {
             flex-shrink: 0;            
         }
 
-
         .copy-btn.active {
             color: green;
         }
-
     `;
 
     document.head.appendChild(style);
