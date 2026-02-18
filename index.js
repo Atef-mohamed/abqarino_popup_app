@@ -343,7 +343,7 @@ function injectStyle() {
         gap: 90px;
     }
         @media (max-width:768) {
-             .content-top-side{
+            .content-top-side{
                 grid-template-columns: repeat(1, 1fr);
                 gap: 0px;
             }
