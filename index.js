@@ -401,6 +401,7 @@ function injectStyle() {
        #subscribe-modal .s-count-down-item {
             text-align: center;
             position: relative;
+            padding:20px;
         }
         
        #subscribe-modal .s-count-down-item-value {
