@@ -2,14 +2,15 @@
 salla.onReady(() => {
     CreateModal();
 
-    getProduct().then(products => {
-        renderProducts(products);
-    });
     injectStyle();
 
     CLoseModalButton();
     handleModalPrimaryBtn()
     CopyPromotionCode();
+    
+    getProduct().then(products => {
+        renderProducts(products);
+    });
 });
 
 // foramt date
