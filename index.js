@@ -74,7 +74,7 @@ function CreateModal() {
                         </div>
                 `: ``}
 
-             ${data.bg_btn_color ? `
+             ${data.txt_btn_ok ? `
                     <button class="ok-modal-btn" style="background: var(--color-primary); color:var(--color-primary-reverse); padding:10px 20px; border:none; border-radius:8px; cursor:pointer;">
                         ${data.txt_btn_ok}
                     </button>
