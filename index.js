@@ -330,7 +330,6 @@ function CopyPromotionCode(params) {
 function injectStyle() {
     const data = window.abqarino_popup_var;
     const bgColor = data.bg_color;
-    const mainColor = data.bg_btn_color;
 
     const style = document.createElement("style");
 
