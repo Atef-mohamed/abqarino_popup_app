@@ -58,7 +58,7 @@ function CreateModal() {
                 </p>
                 `: ``}
                 ${data.brand_description2 ? `
-                <p style="color:var(--color-primary);opacity:0.7; font-size:22px;padding: 20px;">
+                <p style="color:var(--color-primary);opacity:0.7; font-size: 16px;padding: 4px;">
                     ${data.brand_description2}
                 </p>
                 `: ``}
