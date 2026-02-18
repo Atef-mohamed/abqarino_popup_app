@@ -180,7 +180,7 @@ function renderProducts(products) {
         //  Slider config
         const sliderConfig = {
             autoHeight: true,
-            loop: true,
+
             grabCursor: true,
             speed: 500,
             slidesPerView: 1,
