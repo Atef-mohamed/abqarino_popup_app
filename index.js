@@ -164,9 +164,8 @@ function renderProducts(products) {
 
                 <div class="product-buttons">
                     <salla-add-product-button 
-                        width="wide" 
                         product-id="${product.id}">
-                        Add to Cart
+                        <i class="text-base sicon-shopping-bag"></i>
                     </salla-add-product-button>
 
                 </div>
