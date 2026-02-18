@@ -405,9 +405,13 @@ function injectStyle() {
             position: relative;
         }
         
-       #subscribe-modal .s-count-down-item-label {
+       #subscribe-modal .s-count-down-item-value {
             font-size: 24px;
             font-weight: 700;
+        }
+        
+       #subscribe-modal .s-count-down-item-label {
+            font-size:14px
             margin-top: 4px;
         }
             
