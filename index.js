@@ -524,7 +524,10 @@ function injectStyle() {
             #copyText{
                 color: #3cb646;
             }
-        
+        .copyBtn{
+                color: #3cb646;
+            
+        }
         .copy-box p {
             color: #3cb646;
             font-weight: 600;
