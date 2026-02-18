@@ -174,6 +174,7 @@ function renderProducts(products) {
             keyboard: { enabled: true },
             grabCursor: true,
             speed: 500,
+            slidesPerView: "auto",
             spaceBetween: 20,
             pagination: {
                 el: '.swiper-pagination',
@@ -182,76 +183,64 @@ function renderProducts(products) {
             }
         };
 
-        // Create slider wrapper
-        container.innerHTML = `
-        <salla-slider id="products-slider" show-controls="true" type="carousel" slider-config='${JSON.stringify(sliderConfig)}'>
-            <div slot="items" class="products-slides"></div>
-        </salla-slider>
-        <div class="swiper-pagination"></div>
-    `;
+        //  Build all products HTML
+        const productsHTML = products.map(product => `
+            <div class="product-card-item">
+                <div class="product-img">
+                    ${product.image ? `
+                        <img src="${product.image.url}" 
+                            alt="${product.name}"
+                            style="max-width:100%;">
+                    ` : ""}
+                </div>
 
-        //  Get slides container
-        const slidesContainer = container.querySelector(".products-slides");
+                <div class="product-content">
+                    <h3 class="product-title">${product.name || ""}</h3>
 
-        // Loop products and add to slider
-        products.forEach(product => {
-            const productCard = document.createElement("div");
-            productCard.classList.add("product-card", "swiper-slide");
-
-            productCard.innerHTML = `
-            <div class="product-img">
-                ${product.image ? `
-                    <img src="${product.image.url}" 
-                         alt="${product.name}"
-                         style="max-width:100%;">
-                ` : ""}
-            </div>
-
-            <div class="product-content">
-                <h3 class="product-title">${product.name || ""}</h3>
-
-                ${product.brand?.name ? `
-                    <p class="brand-name">${product.brand.name}</p>
-                ` : ""}
-
-                <p class="prices">
-                    ${product.sale_price ? `
-                        <span class="sale_price">
-                            ${product.sale_price} ${product.currency || ""}
-                        </span>
+                    ${product.brand?.name ? `
+                        <p class="brand-name">${product.brand.name}</p>
                     ` : ""}
 
-                    ${product.regular_price ? `
-                        <span class="discount_price">
-                            ${product.regular_price} ${product.currency || ""}
-                        </span>
-                    ` : ""}
-                </p>
+                    <p class="prices">
+                        ${product.sale_price ? `
+                            <span class="sale_price">
+                                ${product.sale_price} ${product.currency || ""}
+                            </span>
+                        ` : ""}
 
-                <div class="product-buttons">
-                    <salla-add-product-button 
-                        width="wide" 
-                        product-id="${product.id}">
-                        Add to Cart
-                    </salla-add-product-button>
-                    <button class="cancel-btn" style="background:transparent; border:none; cursor:pointer;">
-                        لا, شكرا
-                    </button>
+                        ${product.regular_price ? `
+                            <span class="discount_price">
+                                ${product.regular_price} ${product.currency || ""}
+                            </span>
+                        ` : ""}
+                    </p>
+
+                    <div class="product-buttons">
+                        <salla-add-product-button 
+                            width="wide" 
+                            product-id="${product.id}">
+                            Add to Cart
+                        </salla-add-product-button>
+                        <button class="cancel-btn" data-product-id="${product.id}">
+                            لا, شكرا
+                        </button>
+                    </div>
                 </div>
             </div>
+        `).join('');
+
+        // Create slider with all products in ONE slide
+        container.innerHTML = `
+            <salla-slider id="products-slider" show-controls="true" type="carousel" slider-config='${JSON.stringify(sliderConfig)}'>
+                <div slot="items">
+                    <div class="swiper-slide products-grid">
+                        ${productsHTML}
+                    </div>
+                </div>
+            </salla-slider>
+            <div class="swiper-pagination"></div>
         `;
 
-            // Cancel button
-            const cancelBtn = productCard.querySelector(".cancel-btn");
-            if (cancelBtn) {
-                cancelBtn.addEventListener("click", () => {
-                    productCard.style.display = "none";
-                });
-            }
-
-            //  Append to slider
-            slidesContainer.appendChild(productCard);
-        });
     }
 }
 
@@ -322,6 +311,7 @@ function injectStyle() {
     const style = document.createElement("style");
 
     style.innerHTML = `
+    
         #subscribe-modal {
             background-color: ${bgColor};
             overflow: hidden;
@@ -338,6 +328,36 @@ function injectStyle() {
             overflow: hidden;
         }
 
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            width: 100%;
+        }
+
+        .product-card-item {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            background: #38352c65;
+            border-radius: 12px;
+            padding: 20px;
+            color: #fff;
+        }
+
+        .product-card-item .product-img {
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0,0,0,0.7);
+        }
+
+        .product-card-item .product-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
         #products-slider {
             width: 100%;
             overflow: hidden;
