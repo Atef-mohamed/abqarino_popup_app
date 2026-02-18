@@ -497,7 +497,7 @@ function injectStyle() {
             align-items: center;
             justify-content: space-between;
             align-self: center;
-            width: 50%;
+            width: 65%;
             gap: 8px;
             padding: 8px 12px;
             margin: 10px 0;
