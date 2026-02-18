@@ -228,27 +228,28 @@ function renderProducts(products) {
                 ${product.brand?.name ? `
                     <p class="brand-name">${product.brand.name}</p>
                 ` : ""}
+                    <div class="product-content">
+                        <p class="prices">
+                            ${product.sale_price ? `
+                                <span class="sale_price">
+                                    ${product.sale_price} ${product.currency || ""}
+                                </span>
+                            ` : ""}
 
-                <p class="prices">
-                    ${product.sale_price ? `
-                        <span class="sale_price">
-                            ${product.sale_price} ${product.currency || ""}
-                        </span>
-                    ` : ""}
-
-                    ${product.regular_price ? `
-                        <span class="discount_price">
-                            ${product.regular_price} ${product.currency || ""}
-                        </span>
-                    ` : ""}
-                    
-                    <div class="product-buttons">
-                        <salla-add-product-button 
-                            product-id="${product.id}">
-                                <i class="text-base sicon-shopping-bag"></i>
-                        </salla-add-product-button>
+                            ${product.regular_price ? `
+                                <span class="discount_price">
+                                    ${product.regular_price} ${product.currency || ""}
+                                </span>
+                            ` : ""}
+                        
+                        </p>
+                        <div class="product-buttons">
+                            <salla-add-product-button 
+                                product-id="${product.id}">
+                                    <i class="text-base sicon-shopping-bag"></i>
+                            </salla-add-product-button>
+                        </div>
                     </div>
-                </p>
             </div>
         `;
 
