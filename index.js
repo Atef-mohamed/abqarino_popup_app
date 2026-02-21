@@ -1,7 +1,7 @@
 salla.onReady(() => {
   if (
     window.abqarino_popup_var.show_in_home |
-    window.abqarino_popup_var.show_in_category |
+    window.abqarino_popup_var.show_in_offers |
     window.abqarino_popup_var.show_in_cart
   ) {
     CreateModal();
