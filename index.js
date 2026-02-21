@@ -305,8 +305,8 @@ function CopyPromotionCode() {
         try {
             await navigator.clipboard.writeText(copyText.innerText);
 
-            // Toast Success
-            salla.notify.success("تم نسخ كود الخصم 🎉");
+            //  Toast Success
+            salla.notify.success("تم نسخ كود الخصم ✅");
 
             // Change button state
             copyBtn.classList.add("active");
@@ -323,6 +323,7 @@ function CopyPromotionCode() {
             }, 2000);
 
         } catch (err) {
+
             //Toast Error
             salla.notify.error("فشل نسخ الكود ❌");
         }
