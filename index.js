@@ -273,9 +273,6 @@ function renderProducts(products) {
     }
 }
 
-
-
-
 // close btn button
 function CLoseModalButton() {
     // close modal
@@ -299,9 +296,8 @@ function handleModalPrimaryBtn() {
     });
 }
 
-
 // promotion code 
-function CopyPromotionCode(params) {
+function CopyPromotionCode() {
     const copyBtn = document.getElementById("copyBtn");
     const copyText = document.getElementById("copyText");
 
@@ -309,11 +305,14 @@ function CopyPromotionCode(params) {
         try {
             await navigator.clipboard.writeText(copyText.innerText);
 
+            // Toast Success
+            salla.notify.success("تم نسخ كود الخصم 🎉");
+
             // Change button state
             copyBtn.classList.add("active");
             copyBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-            </svg> `;
+            </svg>`;
 
             // Reset after 2 seconds
             setTimeout(() => {
@@ -324,11 +323,12 @@ function CopyPromotionCode(params) {
             }, 2000);
 
         } catch (err) {
-            console.error("Copy failed:", err);
+            //Toast Error
+            salla.notify.error("فشل نسخ الكود ❌");
         }
     });
-
 }
+
 
 // css style
 function injectStyle() {
