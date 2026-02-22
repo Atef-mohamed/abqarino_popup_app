@@ -530,7 +530,7 @@ function injectStyle() {
         #subscribe-modal  .product-card .discount_price {
             color: var(--color-primary-reverse);
             text-decoration: line-through;
-            opacity: 0.5;
+            opacity: 0.8;
             font-size: 0.8rem;
         }
 
