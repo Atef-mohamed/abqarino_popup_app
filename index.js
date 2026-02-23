@@ -147,12 +147,8 @@ function getProduct() {
   // category id
   if (data.products_from_category) {
     console.log("tt",data.products_from_category);
-    return salla.product
-      .list({
-        per_page: 10,
-        filter: {
+    return salla.product.categories({
           category_id: data.products_from_category,
-        },
       })
       .then((res) => {
         console.log("Category Products:", res);
