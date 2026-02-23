@@ -184,7 +184,7 @@ function renderProducts(products) {
         container.style.margin = "20px 0";
     }
 
-    if (products.length === 1) {
+    if (products.length < 4) {
         products.forEach((product) => {
             const productCard = document.createElement("div");
             productCard.classList.add("product-card");
