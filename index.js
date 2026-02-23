@@ -125,14 +125,14 @@ function CreateModal() {
 
             </div>
         </div>
-           ${
-             data.dropdown_list
-               ? `
-                <div id="products-container" class="products-container">
-                </div>
-                `
-               : ``
-           }
+          ${
+                (data.dropdown_list || data.products_from_category)
+                    ? `
+                        <div id="products-container" class="products-container">
+                        </div>
+                    `
+                    : ``
+            }
         </div>
     `;
 
