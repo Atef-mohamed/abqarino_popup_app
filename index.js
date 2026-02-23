@@ -144,7 +144,7 @@ function CreateModal() {
 function getProduct() {
   const data = window.abqarino_popup_var;
 
-  // Category products
+  //category
   if (data.products_from_category) {
     return salla.product
       .fetch({
@@ -152,11 +152,8 @@ function getProduct() {
         source_value: [Number(data.products_from_category)],
       })
       .then((res) => {
-        console.log("Category Response:", res);
-    
-        const products = res.data || [];
-        console.log("Category Products:", products);
-        return products;
+        console.log("Category Products:", res);
+        return res.data || [];
       })
       .catch((err) => {
         console.error("Category Error:", err);
@@ -164,27 +161,12 @@ function getProduct() {
       });
   }
 
-  // ✅ Dropdown list products
+
   const raw = data.dropdown_list;
+
   if (!raw) return Promise.resolve([]);
 
-  let productIds;
-  
-  if (Array.isArray(raw)) {
-    productIds = raw;
-  } else if (typeof raw === "number") {
-    productIds = [raw];
-  } else if (typeof raw === "string") {
-    const trimmed = raw.trim();
-    if (trimmed.startsWith("[")) {
-      productIds = JSON.parse(trimmed);
-    } else {
-      productIds = [Number(trimmed)];
-    }
-  } else {
-    console.error("dropdown_list format not supported:", raw);
-    return Promise.resolve([]);
-  }
+  const productIds = Array.isArray(raw) ? raw : JSON.parse(raw);
 
   const requests = productIds.map((id) =>
     salla.product.getDetails(id, ["brand", "category"]).then((response) => {
