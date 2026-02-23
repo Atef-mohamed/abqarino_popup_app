@@ -1,18 +1,18 @@
 salla.onReady(() => {
   if (
-    window.abqarino_popup_var.show_in_home |
-    window.abqarino_popup_var.show_in_offers |
+    window.abqarino_popup_var.show_in_home ||
+    window.abqarino_popup_var.show_in_offers ||
     window.abqarino_popup_var.show_in_cart
   ) {
     CreateModal();
-
     injectStyle();
-
     CLoseModalButton();
     handleModalPrimaryBtn();
     CopyPromotionCode();
 
     getProduct().then((products) => {
+      console.log("Final Products to Render:", products);
+      console.log("Products Count:", products.length);
       renderProducts(products);
     });
   }
@@ -144,7 +144,7 @@ function CreateModal() {
 function getProduct() {
   const data = window.abqarino_popup_var;
 
-  // Category products
+  // ✅ أولوية 1: Category products
   if (data.products_from_category) {
     return salla.product
       .fetch({
@@ -153,23 +153,42 @@ function getProduct() {
       })
       .then((res) => {
         console.log("Category Response:", res);
-    
         const products = res.data || [];
         console.log("Category Products:", products);
-        return products;
+        console.log("Products Length:", products.length);
+        
+        // ✅ لو فيه منتجات من الـ category - ارجعها
+        if (products.length > 0) {
+          return products;
+        }
+        
+        // ✅ لو مفيش منتجات من الـ category - روح للـ dropdown_list
+        console.log("No category products, falling back to dropdown_list");
+        return getDropdownProducts();
       })
       .catch((err) => {
         console.error("Category Error:", err);
-        return [];
+        // ✅ لو في error - روح للـ dropdown_list
+        return getDropdownProducts();
       });
   }
 
-  // ✅ Dropdown list products
+  // ✅ أولوية 2: Dropdown list products (لو مفيش category)
+  return getDropdownProducts();
+}
+
+// ✅ Function منفصلة للـ dropdown products
+function getDropdownProducts() {
+  const data = window.abqarino_popup_var;
   const raw = data.dropdown_list;
-  if (!raw) return Promise.resolve([]);
+
+  if (!raw) {
+    console.log("No dropdown_list found");
+    return Promise.resolve([]);
+  }
 
   let productIds;
-  
+
   if (Array.isArray(raw)) {
     productIds = raw;
   } else if (typeof raw === "number") {
@@ -185,6 +204,8 @@ function getProduct() {
     console.error("dropdown_list format not supported:", raw);
     return Promise.resolve([]);
   }
+
+  console.log("Fetching dropdown products:", productIds);
 
   const requests = productIds.map((id) =>
     salla.product.getDetails(id, ["brand", "category"]).then((response) => {
