@@ -144,11 +144,12 @@ function CreateModal() {
 function getProduct() {
   const data = window.abqarino_popup_var;
 
-  // category id
+  //category
   if (data.products_from_category) {
-    console.log("tt",data.products_from_category);
-    return salla.product.categories({
-          category_id: data.products_from_category,
+    return salla.product
+      .fetch({
+        source: "categories",
+        source_value: [Number(data.products_from_category)],
       })
       .then((res) => {
         console.log("Category Products:", res);
@@ -160,6 +161,7 @@ function getProduct() {
       });
   }
 
+
   const raw = data.dropdown_list;
 
   if (!raw) return Promise.resolve([]);
@@ -169,12 +171,11 @@ function getProduct() {
   const requests = productIds.map((id) =>
     salla.product.getDetails(id, ["brand", "category"]).then((response) => {
       return response.data || response;
-    }),
+    })
   );
 
   return Promise.all(requests);
 }
-
 // render products
 function renderProducts(products) {
   const container = document.querySelector("#products-container");
