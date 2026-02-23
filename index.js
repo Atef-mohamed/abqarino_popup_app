@@ -449,6 +449,7 @@ function injectStyle() {
         #subscribe-modal   #products-slider {
                 width: 100%;
                 overflow: hidden;
+                display:flex;
         }
 
         #subscribe-modal   .products-slides {
