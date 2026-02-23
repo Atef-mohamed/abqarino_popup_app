@@ -148,11 +148,18 @@ function getProduct() {
   if (data.products_from_category) {
     return salla.product
       .list({
-        category_id: data.products_from_category,
         per_page: 10,
+        filter: {
+          category_id: data.products_from_category,
+        },
       })
       .then((res) => {
+        console.log("Category Products:", res);
         return res.data || [];
+      })
+      .catch((err) => {
+        console.error("Category Error:", err);
+        return [];
       });
   }
 
