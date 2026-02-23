@@ -145,20 +145,21 @@ function getProduct() {
   const data = window.abqarino_popup_var;
 
   //category
-return salla.product
-  .fetch({
-    source: "categories",
-    source_value: [Number(data.products_from_category)],
-  })
-  .then((res) => {
-    console.log("FULL RESPONSE:", res);
-   
-    const products = Array.isArray(res.data)
-      ? res.data
-      : res.data?.data || [];
-
-    return products;
-  });
+  if (data.products_from_category) {
+    return salla.product
+      .fetch({
+        source: "categories",
+        source_value: [Number(data.products_from_category)],
+      })
+      .then((res) => {
+        console.log("Category Products:", res);
+        return res.data || [];
+      })
+      .catch((err) => {
+        console.error("Category Error:", err);
+        return [];
+      });
+  }
 
 
   const raw = data.dropdown_list;
