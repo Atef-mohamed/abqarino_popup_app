@@ -142,7 +142,23 @@ function CreateModal() {
 
 // get product
 function getProduct() {
-  const raw = window.abqarino_popup_var.dropdown_list;
+  const data = window.abqarino_popup_var;
+
+  // category id
+  if (data.products_from_category) {
+    return salla.product
+      .list({
+        category_id: data.products_from_category,
+        per_page: 10,
+      })
+      .then((res) => {
+        return res.data || [];
+      });
+  }
+
+  const raw = data.dropdown_list;
+
+  if (!raw) return Promise.resolve([]);
 
   const productIds = Array.isArray(raw) ? raw : JSON.parse(raw);
 
