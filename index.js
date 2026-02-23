@@ -144,11 +144,11 @@ function getProduct() {
                 source_value: [Number(data.products_from_category)],
             })
             .then((res) => {
-                console.log("Category Products:", res);
+                // console.log("Category Products:", res);
                 return res.data || [];
             })
             .catch((err) => {
-                console.error("Category Error:", err);
+                // console.error("Category Error:", err);
                 return [];
             });
     }
@@ -450,6 +450,7 @@ function injectStyle() {
                 width: 100%;
                 overflow: hidden;
                 display:flex;
+
         }
 
         #subscribe-modal   .products-slides {
